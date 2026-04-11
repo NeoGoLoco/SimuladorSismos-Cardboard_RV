@@ -1,0 +1,2 @@
+D:\RV y RA\Pelon\Integradora Cardboard\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\RV y RA\Pelon\Integradora Cardboard\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt
