@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 //Este script para el movimiento del Jugador y sus acciones, lejos de lo que hace con la mano... Y los objetos del Inventario oculto.
 public class ControladorTerremoto : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class ControladorTerremoto : MonoBehaviour
     public float velocidadTemblor = 10f;
     public bool terremotoActivo = true;
 
+    [Header("Inmersión FFT (Audio Reactivo)")]
+    public AudioSource audioTerremoto; // Aquí se arrastra el sonido del temblor
+    public float multiplicadorAudio = 5f; // Multiplica la violencia cuando hay un sonido fuerte
+    private float[] datosEspectro = new float[256];
+    private float intensidadBajos = 0f;
+
     // Sacudimos el pivote, no la cámara... Por problemas de distancia y parentesco en el Cardboard 
     [Header("VR Rig")]
     public Transform cabezaPivot;
@@ -39,7 +46,7 @@ public class ControladorTerremoto : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        // Guardamos la altura original del PIVOTE, no de la cámara
+        // Guarda la altura original del EarthquakePivot, no de la cámara
         if (cabezaPivot != null)
             alturaPivotOriginal = cabezaPivot.localPosition.y;
 
@@ -52,6 +59,22 @@ public class ControladorTerremoto : MonoBehaviour
         {
             MoverJugador();
             GestionarAgachado();
+        }
+
+        // LECTURA DEL AUDIO FFT EN TIEMPO REAL para el sonido del temblor
+        if (terremotoActivo && audioTerremoto != null && audioTerremoto.isPlaying)
+        {
+            audioTerremoto.GetSpectrumData(datosEspectro, 0, FFTWindow.BlackmanHarris);
+            intensidadBajos = 0f;
+            // Solo lee los bajos más profundos (los primeros 5 valores)
+            for (int i = 0; i < 5; i++)
+            {
+                intensidadBajos += datosEspectro[i];
+            }
+        }
+        else
+        {
+            intensidadBajos = 0f;
         }
 
         ControlarEfectosCamara();
@@ -139,8 +162,11 @@ public class ControladorTerremoto : MonoBehaviour
 
         if (terremotoActivo)
         {
-            posFinal.x = (Mathf.PerlinNoise(Time.time * velocidadTemblor, 0) - 0.5f) * intensidadTemblor;
-            offsetYTotal += (Mathf.PerlinNoise(0, Time.time * velocidadTemblor) - 0.5f) * intensidadTemblor;
+            // El truco para el movimiento oscilante: Sumamos el temblor base + la fuerza reactiva del audio
+            float fuerzaTotal = intensidadTemblor + (intensidadBajos * multiplicadorAudio);
+
+            posFinal.x = (Mathf.PerlinNoise(Time.time * velocidadTemblor, 0) - 0.5f) * fuerzaTotal;
+            offsetYTotal += (Mathf.PerlinNoise(0, Time.time * velocidadTemblor) - 0.5f) * fuerzaTotal;
         }
         else
         {
