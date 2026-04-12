@@ -130,7 +130,8 @@
           {
             "name": "AudioClip",
             "scenes": [
-              "Assets/Menu/Menu_2/Menu.unity"
+              "Assets/Menu/Menu_2/Menu.unity",
+              "Assets/Scenes/SampleScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -153,7 +154,8 @@
           {
             "name": "AudioResource",
             "scenes": [
-              "Assets/Menu/Menu_2/Menu.unity"
+              "Assets/Menu/Menu_2/Menu.unity",
+              "Assets/Scenes/SampleScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -161,7 +163,8 @@
           {
             "name": "AudioSource",
             "scenes": [
-              "Assets/Menu/Menu_2/Menu.unity"
+              "Assets/Menu/Menu_2/Menu.unity",
+              "Assets/Scenes/SampleScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1054,13 +1057,17 @@
         "dependencies": [
           {
             "name": "ParticleSystem",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
           {
             "name": "ParticleSystemRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/SampleScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           }

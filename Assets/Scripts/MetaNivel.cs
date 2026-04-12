@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections; // Necesario para usar Corrutinas
 
 public class MetaNivel : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class MetaNivel : MonoBehaviour
     public MonoBehaviour scriptMovimiento;
     public SistemaAgarre scriptInventario;
 
-    // Variable para rastrear la silla - Si está ya en la meta... O no.
+    // Variable para rastrear la silla
     private bool sillaSalvada = false;
 
     void Start()
@@ -27,11 +28,13 @@ public class MetaNivel : MonoBehaviour
         if (otro.CompareTag("SillaRuedas"))
         {
             sillaSalvada = true;
+            // AQUÍ NO DETENEMOS EL RELOJ, SOLO MARCAMOS QUE ESTÁ ASALVO
         }
 
         // Detectar si el jugador entra a la meta
         if (otro.CompareTag("Player"))
         {
+            GetComponent<GestorSimulacion>().DetenerReloj(); // Congela el universo
             TerminarNivel();
         }
     }
@@ -61,7 +64,6 @@ public class MetaNivel : MonoBehaviour
         if (scriptInventario != null)
         {
             string textoArmado = "";
-            // Tomamos los puntos base que ya recolectaste con la mochila
             int puntajeFinalCalculado = scriptInventario.puntuacionTotal;
 
             if (scriptInventario.desglosePuntuacion.Count > 0)
@@ -76,17 +78,17 @@ public class MetaNivel : MonoBehaviour
                 textoArmado = "No recogiste ningún objeto de valor.\n";
             }
 
-            // Agregamos la evaluación del rescate (La abuelaxd)
+            // Agregamos la evaluación del rescate
             textoArmado += "\n--- REPORTE DE RESCATE ---\n";
 
             if (sillaSalvada)
             {
-                textoArmado += "Evacuación de abuela: ÉXITO (+1000 pts)";
+                textoArmado += "Evacuación de familiar: ÉXITO (+1000 pts)";
                 puntajeFinalCalculado += 1000;
             }
             else
             {
-                textoArmado += "Evacuación de abuela: FALLIDA - No llegaste con ella al punto de reunión (-1000 pts)";
+                textoArmado += "Evacuación de familiar: FALLIDA - No llegaste con ella al punto de reunión (-1000 pts)";
                 puntajeFinalCalculado -= 1000;
             }
 
@@ -95,12 +97,17 @@ public class MetaNivel : MonoBehaviour
             if (textoPuntajeTotal != null) textoPuntajeTotal.text = "PUNTUACIÓN TOTAL: " + puntajeFinalCalculado + " PTS";
         }
 
-        // Llama a la función "ReiniciarJuego" después de 15 segundos.
-        Invoke("ReiniciarJuego", 15f);
+        // Iniciamos el conteo en tiempo real (Corrutina)
+        StartCoroutine(RutinaReinicio(15f));
     }
 
-    void ReiniciarJuego()
+    // Esta es la rutina especial que ignora que el juego esté congelado
+    IEnumerator RutinaReinicio(float tiempoEspera)
     {
+        yield return new WaitForSecondsRealtime(tiempoEspera);
+
+        // Importante: descongelar el tiempo antes de recargar la escena
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

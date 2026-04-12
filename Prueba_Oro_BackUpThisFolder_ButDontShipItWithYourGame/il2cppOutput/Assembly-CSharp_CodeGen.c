@@ -78,12 +78,25 @@ extern void ControlSillaRuedas_EmpezarAEmpujar_m581DE771ED06C4522CF15574721DF961
 extern void ControlSillaRuedas_SoltarSilla_m858C35E7A967C4B85F26CC8B31D369FB122C1DEC (void);
 extern void ControlSillaRuedas_MoverSilla_m435F5F51A7F049DE7B77213CA95657F66BD7C0D0 (void);
 extern void ControlSillaRuedas__ctor_mB0BB4AAE0403F723D78631D8AC442BD061E788FF (void);
+extern void GestorSimulacion_Start_m7AF7E93257A4AC0F935C286D1FBCAFB6C01BA818 (void);
+extern void GestorSimulacion_Update_m0F05E9C3B06415AAB511776253C3B4D10CD3CEE3 (void);
+extern void GestorSimulacion_TiempoAgotado_mCB8D721975C44F4EC44CCB825B02C3F34A206036 (void);
+extern void GestorSimulacion_DetenerReloj_m02D6E9C650EC3525A5BE648C88D633470881A147 (void);
+extern void GestorSimulacion_DetenerTodosLosSonidos_m953944AC9B1563D4536DFF2E4242630028E113E2 (void);
+extern void GestorSimulacion_ReiniciarNivel_m0C2C32B02A4F5734270A9CB0E42C7EE6D05F3C08 (void);
+extern void GestorSimulacion__ctor_m2919E0ED745BBDA2EB74C86117D03D52F21353F3 (void);
 extern void MetaNivel_Start_m9B63C2437DA302868C2B1CAA42221B81A0BFD3EF (void);
 extern void MetaNivel_OnTriggerEnter_mEC944474BE165B106EAFC98DA942C198CD00D8A6 (void);
 extern void MetaNivel_OnTriggerExit_mC883933C2D5C5FD114BB52A4C5145D75A1768E18 (void);
 extern void MetaNivel_TerminarNivel_m7D578E3D7F5601254CE8A848A22424DCBD1019B1 (void);
-extern void MetaNivel_ReiniciarJuego_mED0B19806C824769DA2462C1A96049E2C6BEED49 (void);
+extern void MetaNivel_RutinaReinicio_mA00CF19266C2FC3F05EDBC17684D9FBA7552B770 (void);
 extern void MetaNivel__ctor_m57EA7D6E43E634464282FEEBD400ECA323841054 (void);
+extern void U3CRutinaReinicioU3Ed__10__ctor_m5D13BBDFF42C805AD70CDA59E60626D4B590B921 (void);
+extern void U3CRutinaReinicioU3Ed__10_System_IDisposable_Dispose_mEDA48B5CB0C2F432446A19F2611C5F752CB76C64 (void);
+extern void U3CRutinaReinicioU3Ed__10_MoveNext_m4CD7AE2C363DBE29D0D7B91D079E4F791554D0FA (void);
+extern void U3CRutinaReinicioU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2E161AD95950A3EBAC8C65655C443EC7CBD74477 (void);
+extern void U3CRutinaReinicioU3Ed__10_System_Collections_IEnumerator_Reset_mACCDADAF451E485D5A90F919592470C010BD4C86 (void);
+extern void U3CRutinaReinicioU3Ed__10_System_Collections_IEnumerator_get_Current_m8545FACBEC44AC64F78C4A12E985BD1F2E4F2CD6 (void);
 extern void MirillaMatematica_LateUpdate_mCDBE51E8EF2C158CDCAAA441A0A76854E186FBF2 (void);
 extern void MirillaMatematica__ctor_m1104B986667ECF60716B2ACF7809BB35639F9054 (void);
 extern void MouseLook_Start_m08FD16A47A96624540CD1B8EBA5FFAA1FD75E686 (void);
@@ -397,7 +410,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[390] = 
+static Il2CppMethodPointer s_methodPointers[403] = 
 {
 	AnimadorMenuUI_Start_m3A83A9D517E792C051473B3BC41AB0FD2ECA7395,
 	AnimadorMenuUI_Update_mF65D2D6B51553E8DBDF1C0F7A053587250ECC4B8,
@@ -470,12 +483,25 @@ static Il2CppMethodPointer s_methodPointers[390] =
 	ControlSillaRuedas_SoltarSilla_m858C35E7A967C4B85F26CC8B31D369FB122C1DEC,
 	ControlSillaRuedas_MoverSilla_m435F5F51A7F049DE7B77213CA95657F66BD7C0D0,
 	ControlSillaRuedas__ctor_mB0BB4AAE0403F723D78631D8AC442BD061E788FF,
+	GestorSimulacion_Start_m7AF7E93257A4AC0F935C286D1FBCAFB6C01BA818,
+	GestorSimulacion_Update_m0F05E9C3B06415AAB511776253C3B4D10CD3CEE3,
+	GestorSimulacion_TiempoAgotado_mCB8D721975C44F4EC44CCB825B02C3F34A206036,
+	GestorSimulacion_DetenerReloj_m02D6E9C650EC3525A5BE648C88D633470881A147,
+	GestorSimulacion_DetenerTodosLosSonidos_m953944AC9B1563D4536DFF2E4242630028E113E2,
+	GestorSimulacion_ReiniciarNivel_m0C2C32B02A4F5734270A9CB0E42C7EE6D05F3C08,
+	GestorSimulacion__ctor_m2919E0ED745BBDA2EB74C86117D03D52F21353F3,
 	MetaNivel_Start_m9B63C2437DA302868C2B1CAA42221B81A0BFD3EF,
 	MetaNivel_OnTriggerEnter_mEC944474BE165B106EAFC98DA942C198CD00D8A6,
 	MetaNivel_OnTriggerExit_mC883933C2D5C5FD114BB52A4C5145D75A1768E18,
 	MetaNivel_TerminarNivel_m7D578E3D7F5601254CE8A848A22424DCBD1019B1,
-	MetaNivel_ReiniciarJuego_mED0B19806C824769DA2462C1A96049E2C6BEED49,
+	MetaNivel_RutinaReinicio_mA00CF19266C2FC3F05EDBC17684D9FBA7552B770,
 	MetaNivel__ctor_m57EA7D6E43E634464282FEEBD400ECA323841054,
+	U3CRutinaReinicioU3Ed__10__ctor_m5D13BBDFF42C805AD70CDA59E60626D4B590B921,
+	U3CRutinaReinicioU3Ed__10_System_IDisposable_Dispose_mEDA48B5CB0C2F432446A19F2611C5F752CB76C64,
+	U3CRutinaReinicioU3Ed__10_MoveNext_m4CD7AE2C363DBE29D0D7B91D079E4F791554D0FA,
+	U3CRutinaReinicioU3Ed__10_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2E161AD95950A3EBAC8C65655C443EC7CBD74477,
+	U3CRutinaReinicioU3Ed__10_System_Collections_IEnumerator_Reset_mACCDADAF451E485D5A90F919592470C010BD4C86,
+	U3CRutinaReinicioU3Ed__10_System_Collections_IEnumerator_get_Current_m8545FACBEC44AC64F78C4A12E985BD1F2E4F2CD6,
 	MirillaMatematica_LateUpdate_mCDBE51E8EF2C158CDCAAA441A0A76854E186FBF2,
 	MirillaMatematica__ctor_m1104B986667ECF60716B2ACF7809BB35639F9054,
 	MouseLook_Start_m08FD16A47A96624540CD1B8EBA5FFAA1FD75E686,
@@ -790,7 +816,7 @@ static Il2CppMethodPointer s_methodPointers[390] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[390] = 
+static const int32_t s_InvokerIndices[403] = 
 {
 	16143,
 	16143,
@@ -864,11 +890,24 @@ static const int32_t s_InvokerIndices[390] =
 	16143,
 	16143,
 	16143,
+	16143,
+	16143,
+	16143,
+	16143,
+	16143,
+	16143,
+	16143,
 	12332,
 	12332,
 	16143,
+	10614,
 	16143,
+	12262,
 	16143,
+	15713,
+	15927,
+	16143,
+	15927,
 	16143,
 	16143,
 	16143,
@@ -1187,7 +1226,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	390,
+	403,
 	s_methodPointers,
 	0,
 	NULL,
