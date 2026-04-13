@@ -1275,7 +1275,7 @@ inline void Dictionary_2_Add_mFB317D02F68E47F3EA3D846B68B20FF4DA71BAD9 (Dictiona
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 69147
+// Method Definition Index: 69152
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ColorUtility__cctor_m7BB91303032A1A4D71C6BD43ADD94063B50AB87A (const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;

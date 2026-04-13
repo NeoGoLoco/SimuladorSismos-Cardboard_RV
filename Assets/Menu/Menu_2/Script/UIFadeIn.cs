@@ -28,7 +28,8 @@ public class UIFadeIn : MonoBehaviour
 
         while (tiempoActual < duracionFade)
         {
-            tiempoActual += Time.deltaTime;
+            // unscaledDeltaTime ignora que el juego esté en Time.timeScale = 0
+            tiempoActual += Time.unscaledDeltaTime;
 
             // Calculamos la transparencia (de 1 a 0)
             float alpha = Mathf.Lerp(1f, 0f, tiempoActual / duracionFade);
@@ -36,10 +37,11 @@ public class UIFadeIn : MonoBehaviour
             // Aplicamos el nuevo color con la transparencia actualizada
             cortinaNegra.color = new Color(0, 0, 0, alpha);
 
+            // yield return null espera al siguiente frame. Funciona perfecto con unscaledDeltaTime.
             yield return null;
         }
 
-        // Al terminar, desactivamos el panel para que no consuma recursos... Masomenos
+        // Al terminar, desactivamos el panel para que no consuma recursos
         cortinaNegra.gameObject.SetActive(false);
     }
 }

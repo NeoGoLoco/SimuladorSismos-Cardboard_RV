@@ -14,6 +14,9 @@ public class MetaNivel : MonoBehaviour
     public MonoBehaviour scriptMovimiento;
     public SistemaAgarre scriptInventario;
 
+    [Header("Lógica de Empatía")]
+    public bool habloConFamiliar = false; // Se activará con los botones de diálogo
+
     // Variable para rastrear la silla
     private bool sillaSalvada = false;
 
@@ -28,7 +31,7 @@ public class MetaNivel : MonoBehaviour
         if (otro.CompareTag("SillaRuedas"))
         {
             sillaSalvada = true;
-            // AQUÍ NO DETENEMOS EL RELOJ, SOLO MARCAMOS QUE ESTÁ ASALVO
+            // AQUÍ NO DETENEMOS EL RELOJ, SOLO MARCAMOS QUE ESTÁ A SALVO
         }
 
         // Detectar si el jugador entra a la meta
@@ -46,6 +49,13 @@ public class MetaNivel : MonoBehaviour
         {
             sillaSalvada = false;
         }
+    }
+
+    // --- NUEVA FUNCIÓN: Llama a esta desde los botones de diálogo ---
+    public void RegistrarInteraccionNPC()
+    {
+        habloConFamiliar = true;
+        Debug.Log("Interacción con NPC registrada. Penalización anulada.");
     }
 
     void TerminarNivel()
@@ -78,7 +88,23 @@ public class MetaNivel : MonoBehaviour
                 textoArmado = "No recogiste ningún objeto de valor.\n";
             }
 
-            // Agregamos la evaluación del rescate
+            // --- NUEVO REPORTE DE PROTOCOLO DE COMUNICACIÓN ---
+            textoArmado += "\n--- EVALUACIÓN DE PROTOCOLO ---\n";
+
+            if (habloConFamiliar)
+            {
+                textoArmado += "Aviso a terceros: CUMPLIDO (+500 pts)\n";
+                puntajeFinalCalculado += 500;
+            }
+            else
+            {
+                // Castigo severo por abandonar al NPC
+                textoArmado += "ALERTA: Abandono de civil en zona de riesgo.\n";
+                textoArmado += "PENALIZACIÓN: Falta de comunicación ética (-2000 pts)\n";
+                puntajeFinalCalculado -= 2000;
+            }
+
+            // --- EVALUACIÓN DEL RESCATE FÍSICO ---
             textoArmado += "\n--- REPORTE DE RESCATE ---\n";
 
             if (sillaSalvada)
@@ -88,7 +114,7 @@ public class MetaNivel : MonoBehaviour
             }
             else
             {
-                textoArmado += "Evacuación de familiar: FALLIDA - No llegaste con ella al punto de reunión (-1000 pts)";
+                textoArmado += "Evacuación de familiar: FALLIDA - No llegaste con ella al punto (-1000 pts)";
                 puntajeFinalCalculado -= 1000;
             }
 

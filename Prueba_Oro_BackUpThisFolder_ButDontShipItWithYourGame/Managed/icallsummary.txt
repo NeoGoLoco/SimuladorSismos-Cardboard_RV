@@ -353,6 +353,7 @@ UnityEngine.AudioSettings::StopAudioOutput
 UnityEngine.AudioSource::get_isPlaying_Injected
 UnityEngine.AudioSource::get_volume_Injected
 UnityEngine.AudioSource::GetSpectrumDataHelper_Injected
+UnityEngine.AudioSource::PlayHelper_Injected
 UnityEngine.AudioSource::PlayOneShotHelper_Injected
 UnityEngine.AudioSource::Stop_Injected
 UnityEngine.AudioSource::set_loop_Injected
@@ -654,6 +655,7 @@ UnityEngine.GameObject::get_activeInHierarchy_Injected
 UnityEngine.GameObject::get_activeSelf_Injected
 UnityEngine.GameObject::get_layer_Injected
 UnityEngine.GameObject::CreatePrimitive_Injected
+UnityEngine.GameObject::FindGameObjectWithTag_Injected
 UnityEngine.GameObject::Find_Injected
 UnityEngine.GameObject::GetComponentInChildren_Injected
 UnityEngine.GameObject::GetComponentInParent_Injected
@@ -1910,6 +1912,7 @@ UnityEngine.Transform::get_childCount_Injected
 UnityEngine.Transform::FindRelativeTransformWithPath_Injected
 UnityEngine.Transform::GetChild_Injected
 UnityEngine.Transform::GetParent_Injected
+UnityEngine.Transform::GetRoot_Injected
 UnityEngine.Transform::GetLocalPositionAndRotation_Injected
 UnityEngine.Transform::GetPositionAndRotation_Injected
 UnityEngine.Transform::Internal_LookAt_Injected
