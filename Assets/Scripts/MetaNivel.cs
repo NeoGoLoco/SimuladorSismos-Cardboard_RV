@@ -14,6 +14,7 @@ public class MetaNivel : MonoBehaviour
     public GameObject contenedorBotones;
 
     [Header("El Cuarto Seguro (VR)")]
+    [Tooltip("Crea un GameObject vacío lejos del mapa (ej. Y: -50) y arrástralo aquí")]
     public Transform puntoSeguroUI;
 
     [Header("Referencias del Jugador")]
@@ -25,44 +26,54 @@ public class MetaNivel : MonoBehaviour
     public Transform sillaTransform;
     public float radioDeMeta = 3.0f;
 
-    [Header("Lógica de Empatía")]
+    [Header("Lógica de Empatía / Puerta")]
     public bool habloConFamiliar = false;
+    public GameObject modeloPuertaCerrada;
+    public GameObject modeloPuertaAbierta;
+    public AudioClip sonidoAbrirPuerta;
 
+    [Header("Audio Game Juice")]
+    public AudioSource reproductorAudioMeta;
+    public AudioClip sonidoAparicionTitulo;
+    public AudioClip sonidoPuntuacionFinal;
+
+    // Variables de control
     private bool sillaSalvada = false;
     private bool nivelTerminado = false;
     private bool esperandoRespuesta = false;
 
     void Start()
     {
-        if (panelTablaPuntuacion != null) panelTablaPuntuacion.SetActive(false);
+        if (panelTablaPuntuacion != null)
+        {
+            panelTablaPuntuacion.SetActive(false);
+        }
+
+        // Nos aseguramos de que el estado inicial de las puertas sea el correcto
+        if (modeloPuertaAbierta != null) modeloPuertaAbierta.SetActive(false);
+        if (modeloPuertaCerrada != null) modeloPuertaCerrada.SetActive(true);
     }
 
     void Update()
     {
-        // 1. ESCUCHADOR DE BOTONES FINALES (Usando el New Input System)
+        // 1. ESCUCHADOR DE BOTONES FINALES
         if (esperandoRespuesta)
         {
             bool presionoSi = false;
             bool presionoNo = false;
 
-            // Revisamos el teclado (para pruebas en PC)
             if (Keyboard.current != null)
             {
                 if (Keyboard.current.xKey.wasPressedThisFrame) presionoSi = true;
                 if (Keyboard.current.oKey.wasPressedThisFrame) presionoNo = true;
             }
 
-            // Revisamos el control Bluetooth / PS5
             if (Gamepad.current != null)
             {
-                // buttonSouth = X en PS5, A en Xbox
-                if (Gamepad.current.buttonSouth.wasPressedThisFrame) presionoSi = true;
-
-                // buttonEast = Círculo en PS5, B en Xbox
-                if (Gamepad.current.buttonEast.wasPressedThisFrame) presionoNo = true;
+                if (Gamepad.current.buttonSouth.wasPressedThisFrame) presionoSi = true; // X
+                if (Gamepad.current.buttonEast.wasPressedThisFrame) presionoNo = true;  // Círculo
             }
 
-            // Ejecutamos la acción
             if (presionoSi)
             {
                 esperandoRespuesta = false;
@@ -73,22 +84,28 @@ public class MetaNivel : MonoBehaviour
                 esperandoRespuesta = false;
                 SalirDelJuego();
             }
-            return; // Ignora todo el código de abajo si estamos en el menú final
+
+            return;
         }
 
-        // 2. LÓGICA DE DETECCIÓN DE META (Sin cambios)
-        if (nivelTerminado || jugadorTransform == null || sillaTransform == null) return;
+        // 2. LÓGICA DE DETECCIÓN DE META
+        if (nivelTerminado == true || jugadorTransform == null || sillaTransform == null)
+        {
+            return;
+        }
 
         float distanciaSilla = Vector3.Distance(transform.position, sillaTransform.position);
         sillaSalvada = (distanciaSilla <= radioDeMeta);
 
         float distanciaJugador = Vector3.Distance(transform.position, jugadorTransform.position);
-
         if (distanciaJugador <= radioDeMeta)
         {
             nivelTerminado = true;
+
             if (GetComponent<GestorSimulacion>() != null)
+            {
                 GetComponent<GestorSimulacion>().DetenerReloj();
+            }
 
             TerminarNivel();
         }
@@ -96,42 +113,84 @@ public class MetaNivel : MonoBehaviour
 
     public void RegistrarInteraccionNPC()
     {
-        habloConFamiliar = true;
+        // Solo ejecutamos el cambio si no habíamos hablado con él antes
+        if (!habloConFamiliar)
+        {
+            habloConFamiliar = true;
+
+            // Intercambio de modelos de puerta
+            if (modeloPuertaCerrada != null) modeloPuertaCerrada.SetActive(false);
+
+            if (modeloPuertaAbierta != null)
+            {
+                modeloPuertaAbierta.SetActive(true);
+
+                // Sonido espacial "fantasma" en la posición de la puerta
+                if (sonidoAbrirPuerta != null)
+                {
+                    AudioSource.PlayClipAtPoint(sonidoAbrirPuerta, modeloPuertaAbierta.transform.position, 1f);
+                }
+            }
+        }
     }
 
     void TerminarNivel()
     {
         if (scriptMovimiento != null) scriptMovimiento.enabled = false;
 
-        // Teletransporte al Cuarto Seguro para evitar ver el interior de los modelos
         if (puntoSeguroUI != null)
         {
             jugadorTransform.position = puntoSeguroUI.position;
             jugadorTransform.rotation = puntoSeguroUI.rotation;
         }
 
-        // Mostramos el panel pero con los elementos vacíos para la animación
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         string textoRecibo = CalcularTextoFinal();
-        StartCoroutine(AnimacionFinalJuicy(textoRecibo, scriptInventario.puntuacionTotal + CalcularPuntosExtra()));
+        int puntosExtra = CalcularPuntosExtra();
+        int total = scriptInventario.puntuacionTotal + puntosExtra;
+
+        StartCoroutine(AnimacionFinalJuicy(textoRecibo, total));
     }
 
     string CalcularTextoFinal()
     {
         string texto = "";
+
         if (scriptInventario != null && scriptInventario.desglosePuntuacion.Count > 0)
         {
             foreach (string renglon in scriptInventario.desglosePuntuacion)
+            {
                 texto += renglon + "\n";
+            }
         }
-        else texto = "No recogiste ningún objeto de valor.\n";
+        else
+        {
+            texto = "No recogiste ningún objeto de valor.\n";
+        }
 
         texto += "\n--- EVALUACIÓN DE PROTOCOLO ---\n";
-        if (habloConFamiliar) texto += "Aviso a terceros: CUMPLIDO (+500 pts)\n";
-        else texto += "ALERTA: Abandono de civil. PENALIZACIÓN (-2000 pts)\n";
+
+        if (habloConFamiliar == true)
+        {
+            texto += "Aviso a terceros: CUMPLIDO (+500 pts)\n";
+        }
+        else
+        {
+            texto += "ALERTA: Abandono de civil. PENALIZACIÓN (-2000 pts)\n";
+        }
 
         texto += "\n--- REPORTE DE RESCATE ---\n";
-        if (sillaSalvada) texto += "Evacuación de familiar: ÉXITO (+1000 pts)";
-        else texto += "Evacuación de familiar: FALLIDA (-1000 pts)";
+
+        if (sillaSalvada == true)
+        {
+            texto += "Evacuación de familiar: ÉXITO (+1000 pts)";
+        }
+        else
+        {
+            texto += "Evacuación de familiar: FALLIDA (-1000 pts)";
+        }
 
         return texto;
     }
@@ -139,22 +198,37 @@ public class MetaNivel : MonoBehaviour
     int CalcularPuntosExtra()
     {
         int extra = 0;
-        if (habloConFamiliar) extra += 500; else extra -= 2000;
-        if (sillaSalvada) extra += 1000; else extra -= 1000;
+        if (habloConFamiliar == true) extra += 500; else extra -= 2000;
+        if (sillaSalvada == true) extra += 1000; else extra -= 1000;
         return extra;
     }
 
     IEnumerator AnimacionFinalJuicy(string textoRecibo, int puntajeTotal)
     {
         panelTablaPuntuacion.SetActive(true);
-        contenedorBotones.SetActive(false);
+
+        if (contenedorBotones != null)
+        {
+            contenedorBotones.SetActive(false);
+        }
+
         textoListaObjetos.text = "";
         textoPuntajeTotal.text = "";
         tituloPanel.localScale = Vector3.zero;
 
-        // 1. POP TÍTULO
+        if (reproductorAudioMeta != null && reproductorAudioMeta.clip != null)
+        {
+            reproductorAudioMeta.Play();
+        }
+
+        if (reproductorAudioMeta != null && sonidoAparicionTitulo != null)
+        {
+            reproductorAudioMeta.PlayOneShot(sonidoAparicionTitulo);
+        }
+
         float tiempo = 0;
         float duracionPop = 0.5f;
+
         while (tiempo < duracionPop)
         {
             tiempo += Time.unscaledDeltaTime;
@@ -164,7 +238,6 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        // 2. MÁQUINA DE ESCRIBIR (Recibo)
         foreach (char letra in textoRecibo)
         {
             textoListaObjetos.text += letra;
@@ -173,8 +246,13 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        // 3. MÁQUINA DE ESCRIBIR (Puntaje)
+        if (reproductorAudioMeta != null && sonidoPuntuacionFinal != null)
+        {
+            reproductorAudioMeta.PlayOneShot(sonidoPuntuacionFinal);
+        }
+
         string textoFinal = "PUNTUACIÓN TOTAL: " + puntajeTotal + " PTS";
+
         foreach (char letra in textoFinal)
         {
             textoPuntajeTotal.text += letra;
@@ -183,8 +261,11 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
-        // 4. ACTIVAR ESCUCHA DE CONTROL
-        contenedorBotones.SetActive(true);
+        if (contenedorBotones != null)
+        {
+            contenedorBotones.SetActive(true);
+        }
+
         esperandoRespuesta = true;
     }
 

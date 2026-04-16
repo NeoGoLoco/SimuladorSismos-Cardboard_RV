@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Agarrable
   - SillaRuedas
+  - Mochila
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - UI
   - Interactive
   - NoPass
-  - 
+  - BrazosFPS
   - 
   - 
   - 

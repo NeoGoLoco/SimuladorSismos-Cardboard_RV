@@ -31,7 +31,7 @@ public class ControlSillaRuedas : MonoBehaviour
 
     void Update()
     {
-        // TECLA EMPUJAR (E en PC, Cuadrado en control)
+        
         bool intentoEmpujar = false;
         if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame) intentoEmpujar = true;
         if (Gamepad.current != null && Gamepad.current.buttonWest.wasPressedThisFrame) intentoEmpujar = true;
@@ -59,7 +59,7 @@ public class ControlSillaRuedas : MonoBehaviour
 
             if (!empujando && textoInteraccion != null)
             {
-                textoInteraccion.text = "Presiona Cuadrado/E para empujar la silla";
+                textoInteraccion.text = "Presiona [Cuadrado] para empujar la silla";
             }
         }
     }

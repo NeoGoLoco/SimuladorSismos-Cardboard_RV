@@ -1,0 +1,122 @@
+Jerarquía visible en Unity Escena [1]:
+    *SampleScene*
+├── 1. Escenario (Static) -> Para la detección del NavMesh Surface
+    ├── 3D RightArrow -> Flecha Control Total (Script)
+    └── 3D RightArrow (1) -> Flecha Control Total (Script)
+└── 2. Flujo del Juego
+    ├── Directional Light
+    ├── Global Volume
+    ├── Generador_NavMesh
+    ├── Director_Dialogos -> Sistema Asistencia NPC (Script)
+    ├── Meta -> Meta Nivel / Gestor Simulación (Scripts)
+    │   └── Referencia llegada
+    ├── NPC/Familiar
+    ├── Jugador -> Controlador Terremoto / Sistema Agarre (Scripts) -> Player (Tag)
+    │   └── EarthquakePivot
+    │       └── Main Camera -> MainCamera (Tag)
+    │           ├── CardboardReticlePointer -> Cardboard Reticle Pointer (Script) -> Ignore Raycast (Layer)
+    │           ├── Canvas
+    │           │   ├── Mensaje inventario
+    │           │   ├── TextoInteraccion
+    │           │   ├── Panel
+    │           │   │   ├── Opcion_1
+    │           │   │   ├── Opcion_2
+    │           │   │   ├── Opcion_3
+    │           │   │   └── TextoDatoIA
+    │           │   ├── Panel_MetaFinal
+    │           │   │   ├── REPORTE DE EVACUACIÓN
+    │           │   │   ├── Texto_Desglose
+    │           │   │   ├── Texto_Total
+    │           │   │   └── ContenedorBotones
+    │           │   │       ├── TextoSi
+    │           │   │       └── TextoNo
+    │           │   ├── PanelGameOver -> Animador Menu UI (Script)
+    │           │   │   ├── ¡TIEMPO AGOTADO!
+    │           │   │   └── Text reinicio
+    │           │   ├── TextoReloj
+    │           │   └── TextoConteoRegresivo
+    │           ├── Canvas Tutorial
+    │           │   └── Panel -> Animador Menu UI (Script)
+    │           │       ├── FondoBonito -> UI Fade In (Script)
+    │           │       ├── Título
+    │           │       ├── Texto_Desglose
+    │           │       └── Texto_Boton
+    │           ├── Canvas Pregunta Tutorial
+    │           │   └── Panel -> Animador Menu UI (Script)
+    │           │       ├── FondoBonito -> UI Fade In (Script)
+    │           │       ├── Título
+    │           │       ├── Texto_Desglose
+    │           │       ├── TextoSi
+    │           │       └── TextoNo
+    │           ├── CortinaNegra -> UI Fade In (Script)
+    │           ├── PuntoMano
+    │           └── Brazo
+    │               └── Mano
+    ├── Objetos casa
+    ├── Destino_SalSegura
+    ├── Destino_SalInsegura
+    ├── Destino_Esondite
+    ├── EventSystem
+    ├── SilladeRuedas -> Control Silla Ruedas (Script) -> SillaRuedas (Tag)
+    │   ├── Grandma
+    │   ├── Left_Wheel
+    │   ├── Right_Wheel
+    │   ├── PuntoDeAgarre
+    │   └── Brazos
+    ├── Canvas Mirilla
+    │   └── Mirilla
+    ├── >MainCamera -> Deshabilitado (Utilizado para jugar estilo PC sin Cardboard de Google)
+    ├── >CameraOffset -> Deshabilitado (Utilizado para jugar estilo Oculus Meta Quest 3)
+    ├── Música
+    │   ├── Audio Source Temblor
+    │   ├── Audio Source Musica Inicio
+    │   ├── Audio Source Musica Final
+    │   ├── Audio Source 3,2,1
+    │   ├── Audio Source ESCAPA
+    │   ├── [Zona sonido Alarma]
+    │   └── [Zona sonido Cocina]
+    ├── Sistema de Particulas
+    │   ├── Particle System
+    │   ├── Particle System (1)
+    │   ├── Particle System (2)
+    │   ├── Particle System (3)
+    │   ├── Particle System (4)
+    │   ├── Particle System (5)
+    │   ├── Particle System (6)
+    │   ├── Particle System (7)
+    │   ├── Particle System (8)
+    │   ├── Particle System (9)
+    │   └── Particle System (10)
+    ├── AleatorizadorObjetos -> Aleatorizador Objetos (Script)
+    │   ├── Objetos agarrables
+    │   │   ├── Vaso -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Mouse -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Laptop -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Celular -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Cartera -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Documentos -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Libro vaquero -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   ├── Mochila -> Valor Objeto (Script) -> Mochila (Tag)
+    │   │   ├── Llave -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   │   └── Tv_remote -> Objeto Sismico / Valor Objeto (Scripts) -> Agarrable (Tag)
+    │   └── PuntosControl
+    │       ├── PuntoBuro
+    │       ├── PuntoMesa1
+    │       ├── PuntoMesa2
+    │       ├── PuntoTele
+    │       ├── PuntoCocina
+    │       ├── PuntoCochera
+    │       ├── PuntoCochera2
+    │       ├── PuntoCuartoUno
+    │       ├── PuntoCuartoDos
+    │       ├── PuntoCuartoDos2
+    │       ├── PuntoCuartoTres
+    │       ├── PuntoMesaDos
+    │       └── PuntoMesaDos2
+    └── CuartoFinal
+        ├── Cube
+        ├── Cube (5)
+        ├── Cube (1)
+        ├── Cube (2)
+        ├──Cube (3)
+        └── Cube (4)

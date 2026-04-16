@@ -81,6 +81,9 @@ extern void ControlSillaRuedas_EmpezarAEmpujar_m581DE771ED06C4522CF15574721DF961
 extern void ControlSillaRuedas_SoltarSilla_m858C35E7A967C4B85F26CC8B31D369FB122C1DEC (void);
 extern void ControlSillaRuedas_MoverSilla_m435F5F51A7F049DE7B77213CA95657F66BD7C0D0 (void);
 extern void ControlSillaRuedas__ctor_mB0BB4AAE0403F723D78631D8AC442BD061E788FF (void);
+extern void FlechaControlTotal_Start_m91A8E4A42B5698D6A08D58B60B083B714AA134E8 (void);
+extern void FlechaControlTotal_Update_m482DD6EC4657FAB4CF86869B17B0EDE326B48ABD (void);
+extern void FlechaControlTotal__ctor_m82061F269CBC7C7813B12D167201AE01B70C291F (void);
 extern void GestorSimulacion_Start_m7AF7E93257A4AC0F935C286D1FBCAFB6C01BA818 (void);
 extern void GestorSimulacion_Update_m0F05E9C3B06415AAB511776253C3B4D10CD3CEE3 (void);
 extern void GestorSimulacion_IniciarConteo_m1FD2DA29888EB6BAC2EF4F7E57F5D8F55F103D03 (void);
@@ -108,12 +111,12 @@ extern void MetaNivel_AnimacionFinalJuicy_mBE7129A0287EC860FD6959543710F3A5C05A5
 extern void MetaNivel_ReiniciarJuego_mED0B19806C824769DA2462C1A96049E2C6BEED49 (void);
 extern void MetaNivel_SalirDelJuego_m76662ED46A0C337B5DCAFC4BE84ADEA5EC5546C9 (void);
 extern void MetaNivel__ctor_m57EA7D6E43E634464282FEEBD400ECA323841054 (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21__ctor_mDDC3E44AA743DF1E4ED8AC72342A3D35990F6F0B (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21_System_IDisposable_Dispose_m6D56ED6B783A088359CBC910FBB5E8A81EC3EA00 (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21_MoveNext_m0E63453F72AE1EB88E23FE04FAF654BA5F535520 (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mCDF6D8DDF1CF850FB9B7251A92A4ACF710910777 (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21_System_Collections_IEnumerator_Reset_mCB6CE572F5EB592457159528A860127E09041775 (void);
-extern void U3CAnimacionFinalJuicyU3Ed__21_System_Collections_IEnumerator_get_Current_mB06DBE1F659E31263B5DC862E7046A87116F1C1A (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27__ctor_m0ABF641DD4768701073BC8BFFDAB4BC2E1B5183D (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27_System_IDisposable_Dispose_m1D6074968362C603FD5B3E8079B165066679A63E (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27_MoveNext_m2E04EA2AAF7060F86E392CE1469EC16B6AFACBE3 (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mCA36742178EC8AA977B0A4D4C3CD125A78EC2424 (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27_System_Collections_IEnumerator_Reset_mF37D06A02DA306A90FCC951F0D92E5DF70BEDC13 (void);
+extern void U3CAnimacionFinalJuicyU3Ed__27_System_Collections_IEnumerator_get_Current_m24BFC2AA8DC62A558A76E02DEDE6540203C59033 (void);
 extern void MiradaSinAnimacion_Start_mA04A6F9B57240C0F89741BA29DAB6A78977B4F8B (void);
 extern void MiradaSinAnimacion_LateUpdate_m6173EF6070B9210DC51C3B944E1A99A35785D95A (void);
 extern void MiradaSinAnimacion__ctor_mD8357B3D4B3A4BCC78D2EAD3100C3D564CE25B36 (void);
@@ -430,7 +433,7 @@ extern void U3CWarpTextU3Ed__8_MoveNext_mCE7A826C5E4854C2C509C77BD18F5A9B6D691B0
 extern void U3CWarpTextU3Ed__8_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mD80368E9B7E259311C03E406B75161ED6F7618E3 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42 (void);
 extern void U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19 (void);
-static Il2CppMethodPointer s_methodPointers[423] = 
+static Il2CppMethodPointer s_methodPointers[426] = 
 {
 	AnimadorMenuUI_Start_m3A83A9D517E792C051473B3BC41AB0FD2ECA7395,
 	AnimadorMenuUI_Update_mF65D2D6B51553E8DBDF1C0F7A053587250ECC4B8,
@@ -506,6 +509,9 @@ static Il2CppMethodPointer s_methodPointers[423] =
 	ControlSillaRuedas_SoltarSilla_m858C35E7A967C4B85F26CC8B31D369FB122C1DEC,
 	ControlSillaRuedas_MoverSilla_m435F5F51A7F049DE7B77213CA95657F66BD7C0D0,
 	ControlSillaRuedas__ctor_mB0BB4AAE0403F723D78631D8AC442BD061E788FF,
+	FlechaControlTotal_Start_m91A8E4A42B5698D6A08D58B60B083B714AA134E8,
+	FlechaControlTotal_Update_m482DD6EC4657FAB4CF86869B17B0EDE326B48ABD,
+	FlechaControlTotal__ctor_m82061F269CBC7C7813B12D167201AE01B70C291F,
 	GestorSimulacion_Start_m7AF7E93257A4AC0F935C286D1FBCAFB6C01BA818,
 	GestorSimulacion_Update_m0F05E9C3B06415AAB511776253C3B4D10CD3CEE3,
 	GestorSimulacion_IniciarConteo_m1FD2DA29888EB6BAC2EF4F7E57F5D8F55F103D03,
@@ -533,12 +539,12 @@ static Il2CppMethodPointer s_methodPointers[423] =
 	MetaNivel_ReiniciarJuego_mED0B19806C824769DA2462C1A96049E2C6BEED49,
 	MetaNivel_SalirDelJuego_m76662ED46A0C337B5DCAFC4BE84ADEA5EC5546C9,
 	MetaNivel__ctor_m57EA7D6E43E634464282FEEBD400ECA323841054,
-	U3CAnimacionFinalJuicyU3Ed__21__ctor_mDDC3E44AA743DF1E4ED8AC72342A3D35990F6F0B,
-	U3CAnimacionFinalJuicyU3Ed__21_System_IDisposable_Dispose_m6D56ED6B783A088359CBC910FBB5E8A81EC3EA00,
-	U3CAnimacionFinalJuicyU3Ed__21_MoveNext_m0E63453F72AE1EB88E23FE04FAF654BA5F535520,
-	U3CAnimacionFinalJuicyU3Ed__21_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mCDF6D8DDF1CF850FB9B7251A92A4ACF710910777,
-	U3CAnimacionFinalJuicyU3Ed__21_System_Collections_IEnumerator_Reset_mCB6CE572F5EB592457159528A860127E09041775,
-	U3CAnimacionFinalJuicyU3Ed__21_System_Collections_IEnumerator_get_Current_mB06DBE1F659E31263B5DC862E7046A87116F1C1A,
+	U3CAnimacionFinalJuicyU3Ed__27__ctor_m0ABF641DD4768701073BC8BFFDAB4BC2E1B5183D,
+	U3CAnimacionFinalJuicyU3Ed__27_System_IDisposable_Dispose_m1D6074968362C603FD5B3E8079B165066679A63E,
+	U3CAnimacionFinalJuicyU3Ed__27_MoveNext_m2E04EA2AAF7060F86E392CE1469EC16B6AFACBE3,
+	U3CAnimacionFinalJuicyU3Ed__27_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mCA36742178EC8AA977B0A4D4C3CD125A78EC2424,
+	U3CAnimacionFinalJuicyU3Ed__27_System_Collections_IEnumerator_Reset_mF37D06A02DA306A90FCC951F0D92E5DF70BEDC13,
+	U3CAnimacionFinalJuicyU3Ed__27_System_Collections_IEnumerator_get_Current_m24BFC2AA8DC62A558A76E02DEDE6540203C59033,
 	MiradaSinAnimacion_Start_mA04A6F9B57240C0F89741BA29DAB6A78977B4F8B,
 	MiradaSinAnimacion_LateUpdate_m6173EF6070B9210DC51C3B944E1A99A35785D95A,
 	MiradaSinAnimacion__ctor_mD8357B3D4B3A4BCC78D2EAD3100C3D564CE25B36,
@@ -856,7 +862,7 @@ static Il2CppMethodPointer s_methodPointers[423] =
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_Reset_m07746C332D2D8CE5DEA59873C26F2FAD4B369B42,
 	U3CWarpTextU3Ed__8_System_Collections_IEnumerator_get_Current_m71D7F84D9DEF63BEC6B44866515DDCF35B142A19,
 };
-static const int32_t s_InvokerIndices[423] = 
+static const int32_t s_InvokerIndices[426] = 
 {
 	16143,
 	16143,
@@ -928,6 +934,9 @@ static const int32_t s_InvokerIndices[423] =
 	16143,
 	12332,
 	12332,
+	16143,
+	16143,
+	16143,
 	16143,
 	16143,
 	16143,
@@ -1029,7 +1038,7 @@ static const int32_t s_InvokerIndices[423] =
 	15927,
 	16143,
 	16143,
-	27701,
+	27702,
 	16143,
 	2556,
 	16143,
@@ -1149,7 +1158,7 @@ static const int32_t s_InvokerIndices[423] =
 	15927,
 	15927,
 	16143,
-	27665,
+	27666,
 	12262,
 	16143,
 	15713,
@@ -1286,7 +1295,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	423,
+	426,
 	s_methodPointers,
 	0,
 	NULL,
