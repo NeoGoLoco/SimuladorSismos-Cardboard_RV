@@ -1,4 +1,4 @@
-Jerarquía visible en Unity Escena [1]:
+Jerarquía visible en Unity Escena [1] (La de la Experiencia en VR):
     *SampleScene*
 ├── 1. Escenario (Static) -> Para la detección del NavMesh Surface
     ├── 3D RightArrow -> Flecha Control Total (Script)

@@ -7,6 +7,7 @@ public class SistemaAsistenciaNPC : MonoBehaviour
     [Header("Referencias del NPC")]
     public NavMeshAgent agenteNPC;
     public Transform transformNPC;
+    public Animator animadorNPC; 
 
     [Header("Interacción por Proximidad")]
     public Transform transformJugador;
@@ -42,6 +43,12 @@ public class SistemaAsistenciaNPC : MonoBehaviour
 
     void Update()
     {
+        // <-- NUEVO: Le enviamos la velocidad del agente al Animator todo el tiempo
+        if (agenteNPC != null && animadorNPC != null)
+        {
+            animadorNPC.SetFloat("Speed", agenteNPC.velocity.magnitude);
+        }
+
         if (yaRespondio || transformJugador == null || transformNPC == null) return;
 
         float distancia = Vector3.Distance(transformJugador.position, transformNPC.position);

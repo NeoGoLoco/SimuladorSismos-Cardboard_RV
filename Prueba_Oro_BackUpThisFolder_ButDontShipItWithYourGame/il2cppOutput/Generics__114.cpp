@@ -26388,7 +26388,7 @@ IL_001e:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93537
+// Method Definition Index: 93542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2__ctor_m411B00ED71665154BDAF6C2AE1B3E85BDEB0257C_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, int32_t ___0_capacity, RuntimeObject* ___1_priorityMath, const RuntimeMethod* method) 
 {
 	{
@@ -26426,7 +26426,7 @@ IL_0015:
 		return;
 	}
 }
-// Method Definition Index: 93538
+// Method Definition Index: 93543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count_m28257A2551C19C5629B212381B1D89A98B66A549_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26435,7 +26435,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count_m28257A2551
 		return L_0;
 	}
 }
-// Method Definition Index: 93539
+// Method Definition Index: 93544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ExpandCapacity_m849203FB413902DCCA1D7B092CBA71FB4E53D2BA_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	ItemPriority_2U5BU5D_t841CC34D3B87E016DEE9B20CAB0C3C0CF1E587AE* V_0 = NULL;
@@ -26461,7 +26461,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ExpandCapacity_m849203FB
 		return;
 	}
 }
-// Method Definition Index: 93540
+// Method Definition Index: 93545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_Enqueue_m983769B6F0ECA794BFEF7B6182B4F20E40063ED6_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, RuntimeObject* ___0_item, float ___1_priority, const RuntimeMethod* method) 
 {
 	int32_t V_0 = 0;
@@ -26510,7 +26510,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 93541
+// Method Definition Index: 93546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PriorityQueue_2_Dequeue_m053D541C88E0348B822E620ADED2DCD79EFAB27F_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26540,7 +26540,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PriorityQueue_2_Dequeue_m053D5
 		return L_1;
 	}
 }
-// Method Definition Index: 93542
+// Method Definition Index: 93547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ReorderItem_mE994B1591CAE1360EF5082FA2C60F73A98B7BAC0_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, int32_t ___0_index, int32_t ___1_direction, const RuntimeMethod* method) 
 {
 	ItemPriority_2_t7DDD53DA36EE995C5DD0301CA891D1ACAD6BACA8 V_0;
@@ -26689,7 +26689,7 @@ IL_008b:
 		return;
 	}
 }
-// Method Definition Index: 93543
+// Method Definition Index: 93548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* PriorityQueue_2_GetHighest_m049646F955289525C9250AC320D0D1CB382F383F_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26716,7 +26716,7 @@ IL_0013:
 		return L_3;
 	}
 }
-// Method Definition Index: 93544
+// Method Definition Index: 93549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float PriorityQueue_2_GetHighestPriority_m71C60C776FF5C593E0FF3548322FC0F413777B0E_gshared (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26751,7 +26751,7 @@ IL_0013:
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93537
+// Method Definition Index: 93542
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2__ctor_mCDFF0D76BED3A7D32603920DE0E4905C32B2EC76_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, int32_t ___0_capacity, RuntimeObject* ___1_priorityMath, const RuntimeMethod* method) 
 {
 	{
@@ -26789,7 +26789,7 @@ IL_0015:
 		return;
 	}
 }
-// Method Definition Index: 93538
+// Method Definition Index: 93543
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count_m2D0D200EC9BD9568CA567B00310081EF89792CC5_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, const RuntimeMethod* method) 
 {
 	{
@@ -26798,7 +26798,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count_m2D0D200EC9
 		return L_0;
 	}
 }
-// Method Definition Index: 93539
+// Method Definition Index: 93544
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ExpandCapacity_m3E3FAA14B0AD4CCBA3A985266F754C26FA36C5AE_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, const RuntimeMethod* method) 
 {
 	ItemPriority_2U5BU5D_t4C478E623180485CB8282AAD351CC42AC91FFCD8* V_0 = NULL;
@@ -26824,7 +26824,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ExpandCapacity_m3E3FAA14
 		return;
 	}
 }
-// Method Definition Index: 93540
+// Method Definition Index: 93545
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_Enqueue_m81C95C63BC7F209357804CADDE160E942B1D0857_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, Il2CppFullySharedGenericAny ___0_item, Il2CppFullySharedGenericAny ___1_priority, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_ItemPriority_2_t9C77C6CB8B870AC9A38BDD1E037655B77F5B2E01 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 5));
@@ -26879,7 +26879,7 @@ IL_001f:
 		return;
 	}
 }
-// Method Definition Index: 93541
+// Method Definition Index: 93546
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_Dequeue_m07D0C8DEEAC46C1E85BF86DA69853D12E189B173_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TItem_t3DC6B3003B8DBFA63DD056FBB678B9485A4F40FD = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 6));
@@ -26912,7 +26912,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_Dequeue_m07D0C8DEEAC46C1
 		return;
 	}
 }
-// Method Definition Index: 93542
+// Method Definition Index: 93547
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_ReorderItem_m46F625644FF5B46570A4BDE59D0638427257E80D_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, int32_t ___0_index, int32_t ___1_direction, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_ItemPriority_2_t9C77C6CB8B870AC9A38BDD1E037655B77F5B2E01 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 5));
@@ -27073,7 +27073,7 @@ IL_008b:
 		return;
 	}
 }
-// Method Definition Index: 93543
+// Method Definition Index: 93548
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_GetHighest_m4FE71725446114C309B46832079ADAFB6A5846D2_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TItem_t3DC6B3003B8DBFA63DD056FBB678B9485A4F40FD = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 6));
@@ -27103,7 +27103,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 93544
+// Method Definition Index: 93549
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void PriorityQueue_2_GetHighestPriority_m3F9F0DA69CB999DC95F25E5D341B6FF5E13D0BA1_gshared (PriorityQueue_2_t426A88A4A83296FAFC29526E6D228B6A5661E47B* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TPriority_t9F9ECDB516C6D5CCD6D97DCF5CD5F1558F879ED1 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 7));

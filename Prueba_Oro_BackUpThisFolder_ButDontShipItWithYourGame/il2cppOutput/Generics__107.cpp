@@ -33230,7 +33230,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NavigationEventBase_1_Dispatch_m81E24F7F
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93529
+// Method Definition Index: 93534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2__ctor_m5355897546BB61E1C08AE73C915396628DDF73F1_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, int32_t ___0_maxCapacity, RuntimeObject* ___1_distanceMath, const RuntimeMethod* method) 
 {
 	{
@@ -33254,7 +33254,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2__ctor_m5355897546
 		return;
 	}
 }
-// Method Definition Index: 93530
+// Method Definition Index: 93535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_MaxCapacity_mA3E0EA212D40C309FB3E5CD54DB3B02BA5BA3989_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33263,7 +33263,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_MaxCapacit
 		return L_0;
 	}
 }
-// Method Definition Index: 93531
+// Method Definition Index: 93536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_Count_m7BCC667048D331226761C850E8FDFA38206BB388_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33275,7 +33275,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_Count_m7BC
 		return L_1;
 	}
 }
-// Method Definition Index: 93532
+// Method Definition Index: 93537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NearestNeighbourList_2_Add_mDCCCAC978A54E922DAF4996B91123B2BDD5A0F20_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, RuntimeObject* ___0_item, float ___1_distance, const RuntimeMethod* method) 
 {
 	{
@@ -33340,7 +33340,7 @@ IL_004a:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 93533
+// Method Definition Index: 93538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NearestNeighbourList_2_GetFurtherest_m32AD1E1AE2EB911A3547BB354981800210463493_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33369,7 +33369,7 @@ IL_0013:
 		return L_3;
 	}
 }
-// Method Definition Index: 93534
+// Method Definition Index: 93539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float NearestNeighbourList_2_GetFurtherestDistance_mFFF0E132FFF00CFE9B9C26AE573AF201A16B365D_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33398,7 +33398,7 @@ IL_0013:
 		return L_3;
 	}
 }
-// Method Definition Index: 93535
+// Method Definition Index: 93540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NearestNeighbourList_2_RemoveFurtherest_mB2024CEE8F9594D4A33BD33AED8C85617C1612B5_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33410,7 +33410,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* NearestNeighbourList_2_RemoveF
 		return L_1;
 	}
 }
-// Method Definition Index: 93536
+// Method Definition Index: 93541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NearestNeighbourList_2_get_IsCapacityReached_m0496D1E20A96C4347C67F9B1FA07B30C085A298F_gshared (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33430,7 +33430,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NearestNeighbourList_2_get_IsCapacityRea
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93529
+// Method Definition Index: 93534
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2__ctor_mC53F69B42726F990B7149B4220E507A72D2EED43_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, int32_t ___0_maxCapacity, RuntimeObject* ___1_distanceMath, const RuntimeMethod* method) 
 {
 	{
@@ -33454,7 +33454,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2__ctor_mC53F69B427
 		return;
 	}
 }
-// Method Definition Index: 93530
+// Method Definition Index: 93535
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_MaxCapacity_m8B7578021E5DC7B1E7D53A4B3845C5E46F1FBC13_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33463,7 +33463,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_MaxCapacit
 		return L_0;
 	}
 }
-// Method Definition Index: 93531
+// Method Definition Index: 93536
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_Count_mCADC2617C92CB846F5CE4037BD26492A6DD397BB_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -33475,7 +33475,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_Count_mCAD
 		return L_1;
 	}
 }
-// Method Definition Index: 93532
+// Method Definition Index: 93537
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NearestNeighbourList_2_Add_mD840B96D8CA2AB64D840F3DB73CA64C27132EEBD_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, Il2CppFullySharedGenericAny ___0_item, Il2CppFullySharedGenericAny ___1_distance, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TDistance_t052BE437F67A94A717F08D6014B3E362E71EB37F = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 5));
@@ -33547,7 +33547,7 @@ IL_004a:
 		return (bool)1;
 	}
 }
-// Method Definition Index: 93533
+// Method Definition Index: 93538
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2_GetFurtherest_mA5058EF8397DAF7CD30F9AE36DDA493C31781822_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TItem_t07E42FB4080A1C23717C9BD76B2B72FB0C53DED3 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 9));
@@ -33578,7 +33578,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 93534
+// Method Definition Index: 93539
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2_GetFurtherestDistance_mB32C011F3EAAF09A30E43DB36A7DA78418AF9888_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TDistance_t052BE437F67A94A717F08D6014B3E362E71EB37F = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 5));
@@ -33609,7 +33609,7 @@ IL_0013:
 		return;
 	}
 }
-// Method Definition Index: 93535
+// Method Definition Index: 93540
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2_RemoveFurtherest_m4229C5775C8EF51A4C0FE68F4B0FB8B7BDD9B2A1_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, Il2CppFullySharedGenericAny* il2cppRetVal, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_TItem_t07E42FB4080A1C23717C9BD76B2B72FB0C53DED3 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(method->klass->rgctx_data, 9));
@@ -33623,7 +33623,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void NearestNeighbourList_2_RemoveFurtherest_
 		return;
 	}
 }
-// Method Definition Index: 93536
+// Method Definition Index: 93541
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool NearestNeighbourList_2_get_IsCapacityReached_mF7FB583E3C4F01FFB4E1C36C52A9907B503ED01A_gshared (NearestNeighbourList_2_tACEB0A93DABE411586FDBB12D143280DC70D291A* __this, const RuntimeMethod* method) 
 {
 	{
@@ -44330,7 +44330,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void NavigationEventBase_1_set_de
 		return;
 	}
 }
-// Method Definition Index: 93538
+// Method Definition Index: 93543
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count_m28257A2551C19C5629B212381B1D89A98B66A549_gshared_inline (PriorityQueue_2_t9F741F53E5BA8E8AD97D3B708D03FD02984C6E47* __this, const RuntimeMethod* method) 
 {
 	{
@@ -44339,7 +44339,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t PriorityQueue_2_get_Count
 		return L_0;
 	}
 }
-// Method Definition Index: 93530
+// Method Definition Index: 93535
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t NearestNeighbourList_2_get_MaxCapacity_mA3E0EA212D40C309FB3E5CD54DB3B02BA5BA3989_gshared_inline (NearestNeighbourList_2_t98EA4028D5E1E025E2239836150717F9B86664AE* __this, const RuntimeMethod* method) 
 {
 	{

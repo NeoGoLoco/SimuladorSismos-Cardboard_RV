@@ -14821,7 +14821,7 @@ IL2CPP_EXTERN_C  void HierarchyPropertyUnmanaged_1_Unity_Hierarchy_IHierarchyPro
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93445
+// Method Definition Index: 93450
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRect_1_get_MinPoint_m693F4A3AA4E74CE7B05F47ED74B644ED4B9C2E25_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14839,7 +14839,7 @@ IL2CPP_EXTERN_C  SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRe
 	_returnValue = HyperRect_1_get_MinPoint_m693F4A3AA4E74CE7B05F47ED74B644ED4B9C2E25_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 93446
+// Method Definition Index: 93451
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HyperRect_1_set_MinPoint_mEBDCE97988CF1B60A014233E1AAE8F0EDD8E0C96_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14865,7 +14865,7 @@ IL2CPP_EXTERN_C  void HyperRect_1_set_MinPoint_mEBDCE97988CF1B60A014233E1AAE8F0E
 	_thisAdjusted = reinterpret_cast<HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E*>(__this + _offset);
 	HyperRect_1_set_MinPoint_mEBDCE97988CF1B60A014233E1AAE8F0EDD8E0C96(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 93447
+// Method Definition Index: 93452
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRect_1_get_MaxPoint_m6BB3F2F8ACA5748E919CFB82F334758A632519AF_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -14883,7 +14883,7 @@ IL2CPP_EXTERN_C  SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRe
 	_returnValue = HyperRect_1_get_MaxPoint_m6BB3F2F8ACA5748E919CFB82F334758A632519AF_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 93448
+// Method Definition Index: 93453
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HyperRect_1_set_MaxPoint_mF548AFC72B60ADC76C5B06F18D5CAE38F1209F12_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -14909,7 +14909,7 @@ IL2CPP_EXTERN_C  void HyperRect_1_set_MaxPoint_mF548AFC72B60ADC76C5B06F18D5CAE38
 	_thisAdjusted = reinterpret_cast<HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E*>(__this + _offset);
 	HyperRect_1_set_MaxPoint_mF548AFC72B60ADC76C5B06F18D5CAE38F1209F12(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 93449
+// Method Definition Index: 93454
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E HyperRect_1_Infinite_m4086F1C106F71025B0043A9C2FF3E44945190838_gshared (int32_t ___0_dimensions, RuntimeObject* ___1_math, const RuntimeMethod* method) 
 {
 	HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E V_0;
@@ -14974,7 +14974,7 @@ IL_0050:
 		return L_15;
 	}
 }
-// Method Definition Index: 93450
+// Method Definition Index: 93455
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRect_1_GetClosestPoint_m8AAADCAC0FBACEEAD6EB663640926ED40CA1862F_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___0_toPoint, RuntimeObject* ___1_math, const RuntimeMethod* method) 
 {
 	SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* V_0 = NULL;
@@ -15109,7 +15109,7 @@ IL2CPP_EXTERN_C  SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRe
 	_returnValue = HyperRect_1_GetClosestPoint_m8AAADCAC0FBACEEAD6EB663640926ED40CA1862F(_thisAdjusted, ___0_toPoint, ___1_math, method);
 	return _returnValue;
 }
-// Method Definition Index: 93451
+// Method Definition Index: 93456
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E HyperRect_1_Clone_mCBC473EE7141CA7FFCE6A9DA4023E57DE08DCCEC_gshared (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, const RuntimeMethod* method) 
 {
 	HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E V_0;
@@ -15147,7 +15147,7 @@ IL2CPP_EXTERN_C  HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E HyperRect
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
-// Method Definition Index: 93445
+// Method Definition Index: 93450
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* HyperRect_1_get_MinPoint_m0696E2B0032E644B5D05DA5ABE42BBDE4F8EE7F5_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15165,7 +15165,7 @@ IL2CPP_EXTERN_C  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7E
 	_returnValue = HyperRect_1_get_MinPoint_m0696E2B0032E644B5D05DA5ABE42BBDE4F8EE7F5_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 93446
+// Method Definition Index: 93451
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HyperRect_1_set_MinPoint_mCE560784E9FD1DA9DC9B7D2921BD65DE93A02D39_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -15191,7 +15191,7 @@ IL2CPP_EXTERN_C  void HyperRect_1_set_MinPoint_mCE560784E9FD1DA9DC9B7D2921BD65DE
 	_thisAdjusted = reinterpret_cast<HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E*>(__this + _offset);
 	HyperRect_1_set_MinPoint_mCE560784E9FD1DA9DC9B7D2921BD65DE93A02D39(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 93447
+// Method Definition Index: 93452
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* HyperRect_1_get_MaxPoint_m3F8E9B7A9F1C5701AFA500A0D61589ED8D43D454_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -15209,7 +15209,7 @@ IL2CPP_EXTERN_C  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7E
 	_returnValue = HyperRect_1_get_MaxPoint_m3F8E9B7A9F1C5701AFA500A0D61589ED8D43D454_inline(_thisAdjusted, method);
 	return _returnValue;
 }
-// Method Definition Index: 93448
+// Method Definition Index: 93453
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HyperRect_1_set_MaxPoint_m140CC638F48EC173EBBEFE2BD89DE462A2AB17A0_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___0_value, const RuntimeMethod* method) 
 {
 	{
@@ -15235,7 +15235,7 @@ IL2CPP_EXTERN_C  void HyperRect_1_set_MaxPoint_m140CC638F48EC173EBBEFE2BD89DE462
 	_thisAdjusted = reinterpret_cast<HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E*>(__this + _offset);
 	HyperRect_1_set_MaxPoint_m140CC638F48EC173EBBEFE2BD89DE462A2AB17A0(_thisAdjusted, ___0_value, method);
 }
-// Method Definition Index: 93449
+// Method Definition Index: 93454
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E HyperRect_1_Infinite_m2C1F317184621180231C00BC4CFCEED91B20682F_gshared (int32_t ___0_dimensions, RuntimeObject* ___1_math, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_T_tD9080C97273EBF600F914C1E8D0D0895F205A5E6 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 9));
@@ -15303,7 +15303,7 @@ IL_0050:
 		return L_15;
 	}
 }
-// Method Definition Index: 93450
+// Method Definition Index: 93455
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* HyperRect_1_GetClosestPoint_m33A664E63D47A4FFD07D97998D231EB67907F533_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* ___0_toPoint, RuntimeObject* ___1_math, const RuntimeMethod* method) 
 {
 	const uint32_t SizeOf_T_tD9080C97273EBF600F914C1E8D0D0895F205A5E6 = il2cpp_codegen_sizeof(il2cpp_rgctx_data_no_init(InitializedTypeInfo(method->klass)->rgctx_data, 9));
@@ -15449,7 +15449,7 @@ IL2CPP_EXTERN_C  __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7E
 	_returnValue = HyperRect_1_GetClosestPoint_m33A664E63D47A4FFD07D97998D231EB67907F533(_thisAdjusted, ___0_toPoint, ___1_math, method);
 	return _returnValue;
 }
-// Method Definition Index: 93451
+// Method Definition Index: 93456
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E HyperRect_1_Clone_m0CF9AA861ACFCC2F6C5228C2B5799A9535A0F954_gshared (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, const RuntimeMethod* method) 
 {
 	HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E V_0;
@@ -96514,7 +96514,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t* UnsafeUtility_AsRef_TisI
 		return (int32_t*)(L_0);
 	}
 }
-// Method Definition Index: 93445
+// Method Definition Index: 93450
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRect_1_get_MinPoint_m693F4A3AA4E74CE7B05F47ED74B644ED4B9C2E25_gshared_inline (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -96523,7 +96523,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB585701
 		return L_0;
 	}
 }
-// Method Definition Index: 93447
+// Method Definition Index: 93452
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* HyperRect_1_get_MaxPoint_m6BB3F2F8ACA5748E919CFB82F334758A632519AF_gshared_inline (HyperRect_1_t7E2D1CFAB0A6B5EDF7FA61FEFF80D9A42637F81E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -96532,7 +96532,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR SingleU5BU5D_t89DEFE97BCEDB585701
 		return L_0;
 	}
 }
-// Method Definition Index: 93445
+// Method Definition Index: 93450
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* HyperRect_1_get_MinPoint_m0696E2B0032E644B5D05DA5ABE42BBDE4F8EE7F5_gshared_inline (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, const RuntimeMethod* method) 
 {
 	{
@@ -96541,7 +96541,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5B
 		return L_0;
 	}
 }
-// Method Definition Index: 93447
+// Method Definition Index: 93452
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR __Il2CppFullySharedGenericTypeU5BU5D_tCAB6D060972DD49223A834B7EEFEB9FE2D003BEC* HyperRect_1_get_MaxPoint_m3F8E9B7A9F1C5701AFA500A0D61589ED8D43D454_gshared_inline (HyperRect_1_t4D51A545B7039776BDC4267F330B479F98D8D69E* __this, const RuntimeMethod* method) 
 {
 	{

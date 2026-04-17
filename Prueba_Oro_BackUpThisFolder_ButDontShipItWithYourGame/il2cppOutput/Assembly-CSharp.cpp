@@ -176,6 +176,7 @@ struct AleatorizadorObjetos_tD509D8D9E35D943B6FEBEC03E3FB9D4139E4A29C;
 struct AnimadorMenuUI_t106145CBE481D957DAB0DF2F3430F71EEFCCCD44;
 struct AnimationCurve_tCBFFAAD05CEBB35EF8D8631BD99914BE1A6BB354;
 struct AnimationTriggers_tA0DC06F89C5280C6DD972F6F4C8A56D7F4F79074;
+struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883;
 struct AnyKeyControl_t88E59A594CAF1E3A432C3BEC2634C0CA462D8A14;
 struct AudioClip_t5D272C4EB4F2D3ED49F1C346DEA373CF6D585F20;
 struct AudioReactiveUI_t97E47988F161D452242B8DC812126B78D4E34B70;
@@ -452,6 +453,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral54ED768225A90B0F57E82A1638F18F4B942B80BE
 IL2CPP_EXTERN_C String_t* _stringLiteral55F097B2603C69F9353B2AE824F1FE43E6B46F87;
 IL2CPP_EXTERN_C String_t* _stringLiteral5620FA4FDA5B44A8878579279FD1DE2B68701891;
 IL2CPP_EXTERN_C String_t* _stringLiteral5C7690812F9942DC97AAE7C548D259A23A0A8A7D;
+IL2CPP_EXTERN_C String_t* _stringLiteral5D2E3D85D1C3D4F42FAE33FB35C01C48241E0B32;
 IL2CPP_EXTERN_C String_t* _stringLiteral6E4375E7AD5BE81386384D082A193305076E5F58;
 IL2CPP_EXTERN_C String_t* _stringLiteral71B680ABF9213B3E8FB888056C235C79CFE83314;
 IL2CPP_EXTERN_C String_t* _stringLiteral72D498F039FD562896966E064E8315EA0BCE68C5;
@@ -556,7 +558,6 @@ IL2CPP_EXTERN_C const RuntimeMethod* U3CCargarJuegoConRetrasoU3Ed__8_System_Coll
 IL2CPP_EXTERN_C const RuntimeMethod* U3CCerrarJuegoConRetrasoU3Ed__10_System_Collections_IEnumerator_Reset_mF182BB34C5BEF4773B9FEF4F85B23834C3F52553_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CDesvanecerCortinaU3Ed__3_System_Collections_IEnumerator_Reset_mD6A3348BC469132CD5D3A6716041F3B80B0732FA_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CDisplayTextMeshFloatingTextU3Ed__16_System_Collections_IEnumerator_Reset_m5A7148435B35A0A84329416FF765D45F6AA0F4E1_RuntimeMethod_var;
-IL2CPP_EXTERN_C const RuntimeMethod* U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_Reset_mCCE19093B7355F3E23834E27A8517661DF833797_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CPerformFadeInU3Ed__5_System_Collections_IEnumerator_Reset_mFC27519C64711E80DD0048511AAB4989A4104109_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CRevealCharactersU3Ed__7_System_Collections_IEnumerator_Reset_mD12057609EFCBCA8E7B61B0421D4A7C5A206C8C3_RuntimeMethod_var;
 IL2CPP_EXTERN_C const RuntimeMethod* U3CRevealWordsU3Ed__8_System_Collections_IEnumerator_Reset_mE5E0678716735BDF0D632FE43E392981E75A1C4D_RuntimeMethod_var;
@@ -3479,6 +3480,9 @@ struct TMP_TextProcessingStack_1_t2DDA00FFC64AF6E3AFD475AB2086D16C34787E0F
 	int32_t ___m_RolloverSize;
 	int32_t ___m_Count;
 };
+struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
+{
+};
 struct AudioBehaviour_t2DC0BEF7B020C952F3D2DA5AAAC88501C7EEB941  : public Behaviour_t01970CFBBA658497AE30F311C447DB0440BAB7FA
 {
 };
@@ -3993,6 +3997,7 @@ struct SistemaAsistenciaNPC_t3C776ABB58CBA95B9A0CAEDF8BFA26DE0EB196E5  : public 
 {
 	NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* ___agenteNPC;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___transformNPC;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___animadorNPC;
 	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___transformJugador;
 	float ___distanciaInteraccion;
 	bool ___dialogoActivo;
@@ -6056,6 +6061,8 @@ inline ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* Component
 {
 	return ((  ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* (*) (Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3*, const RuntimeMethod*))Component_GetComponent_TisRuntimeObject_m7181F81CAEC2CF53F5D2BC79B7425C16E1F80D33_gshared)(__this, method);
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 NavMeshAgent_get_velocity_m028219D0E4678D727F00C53AE3DCBCF29AF04DA7 (NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Animator_SetFloat_m10C78733FAFC7AFEDBDACC48B7C66D3A35A0A7FE (Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* __this, String_t* ___0_name, float ___1_value, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ActivarModoDialogo_m98B70396E9CE62674BF986E1E2503051BA7AB5CD (SistemaAsistenciaNPC_t3C776ABB58CBA95B9A0CAEDF8BFA26DE0EB196E5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_DesactivarModoDialogo_mCAEEA580C7BBFD9DBEE10874B636AC7510B7B610 (SistemaAsistenciaNPC_t3C776ABB58CBA95B9A0CAEDF8BFA26DE0EB196E5* __this, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RegistrarAccionEnTabla_m426238B1C5F4CB7757F8408AF654377ECD282001 (SistemaAsistenciaNPC_t3C776ABB58CBA95B9A0CAEDF8BFA26DE0EB196E5* __this, String_t* ___0_nombreAccion, int32_t ___1_puntos, const RuntimeMethod* method) ;
@@ -15399,7 +15406,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_Start_m16C10C56F84B
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:35>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:36>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelDialogosUI;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15410,7 +15417,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_Start_m16C10C56F84B
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:35>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:36>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___panelDialogosUI;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -15418,7 +15425,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_Start_m16C10C56F84B
 
 IL_001a:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:37>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:38>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = __this->___transformJugador;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -15429,7 +15436,7 @@ IL_001a:
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:39>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:40>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___transformJugador;
 		NullCheck(L_5);
 		ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* L_6;
@@ -15440,7 +15447,7 @@ IL_001a:
 
 IL_0039:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:41>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:42>
 		return;
 	}
 }
@@ -15452,148 +15459,187 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_Update_m91E3FDD9CB8
 	{
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral5D2E3D85D1C3D4F42FAE33FB35C01C48241E0B32);
 		s_Il2CppMethodInitialized = true;
 	}
 	float V_0 = 0.0f;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_1;
+	memset((&V_1), 0, sizeof(V_1));
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:45>
-		bool L_0 = __this->___yaRespondio;
-		if (L_0)
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:47>
+		NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* L_0 = __this->___agenteNPC;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_1;
+		L_1 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_0, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_1)
 		{
-			goto IL_0024;
+			goto IL_003f;
 		}
 	}
 	{
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_1 = __this->___transformJugador;
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_2 = __this->___animadorNPC;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_2;
-		L_2 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_1, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (L_2)
+		bool L_3;
+		L_3 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_2, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_3)
 		{
-			goto IL_0024;
+			goto IL_003f;
 		}
 	}
 	{
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = __this->___transformNPC;
-		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_4;
-		L_4 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_3, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_4)
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:49>
+		Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* L_4 = __this->___animadorNPC;
+		NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* L_5 = __this->___agenteNPC;
+		NullCheck(L_5);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
+		L_6 = NavMeshAgent_get_velocity_m028219D0E4678D727F00C53AE3DCBCF29AF04DA7(L_5, NULL);
+		V_1 = L_6;
+		float L_7;
+		L_7 = Vector3_get_magnitude_mF0D6017E90B345F1F52D1CC564C640F1A847AF2D_inline((&V_1), NULL);
+		NullCheck(L_4);
+		Animator_SetFloat_m10C78733FAFC7AFEDBDACC48B7C66D3A35A0A7FE(L_4, _stringLiteral5D2E3D85D1C3D4F42FAE33FB35C01C48241E0B32, L_7, NULL);
+	}
+
+IL_003f:
+	{
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:52>
+		bool L_8 = __this->___yaRespondio;
+		if (L_8)
 		{
-			goto IL_0025;
+			goto IL_0063;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_9 = __this->___transformJugador;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_10;
+		L_10 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_9, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (L_10)
+		{
+			goto IL_0063;
+		}
+	}
+	{
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_11 = __this->___transformNPC;
+		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
+		bool L_12;
+		L_12 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_11, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_12)
+		{
+			goto IL_0064;
 		}
 	}
 
-IL_0024:
+IL_0063:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:45>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:52>
 		return;
 	}
 
-IL_0025:
+IL_0064:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:47>
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_5 = __this->___transformJugador;
-		NullCheck(L_5);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_6;
-		L_6 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_5, NULL);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_7 = __this->___transformNPC;
-		NullCheck(L_7);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_8;
-		L_8 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_7, NULL);
-		float L_9;
-		L_9 = Vector3_Distance_m2314DB9B8BD01157E013DF87BEA557375C7F9FF9_inline(L_6, L_8, NULL);
-		V_0 = L_9;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:49>
-		float L_10 = V_0;
-		float L_11 = __this->___distanciaInteraccion;
-		if ((!(((float)L_10) <= ((float)L_11))))
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:54>
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_13 = __this->___transformJugador;
+		NullCheck(L_13);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_14;
+		L_14 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_13, NULL);
+		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_15 = __this->___transformNPC;
+		NullCheck(L_15);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_16;
+		L_16 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_15, NULL);
+		float L_17;
+		L_17 = Vector3_Distance_m2314DB9B8BD01157E013DF87BEA557375C7F9FF9_inline(L_14, L_16, NULL);
+		V_0 = L_17;
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:56>
+		float L_18 = V_0;
+		float L_19 = __this->___distanciaInteraccion;
+		if ((!(((float)L_18) <= ((float)L_19))))
 		{
-			goto IL_005a;
+			goto IL_0099;
 		}
 	}
 	{
-		bool L_12 = __this->___dialogoActivo;
-		if (L_12)
+		bool L_20 = __this->___dialogoActivo;
+		if (L_20)
 		{
-			goto IL_005a;
+			goto IL_0099;
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:51>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:58>
 		SistemaAsistenciaNPC_ActivarModoDialogo_m98B70396E9CE62674BF986E1E2503051BA7AB5CD(__this, NULL);
-		goto IL_0071;
+		goto IL_00b0;
 	}
 
-IL_005a:
+IL_0099:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:53>
-		float L_13 = V_0;
-		float L_14 = __this->___distanciaInteraccion;
-		if ((!(((float)L_13) > ((float)L_14))))
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:60>
+		float L_21 = V_0;
+		float L_22 = __this->___distanciaInteraccion;
+		if ((!(((float)L_21) > ((float)L_22))))
 		{
-			goto IL_0071;
+			goto IL_00b0;
 		}
 	}
 	{
-		bool L_15 = __this->___dialogoActivo;
-		if (!L_15)
+		bool L_23 = __this->___dialogoActivo;
+		if (!L_23)
 		{
-			goto IL_0071;
+			goto IL_00b0;
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:55>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:62>
 		SistemaAsistenciaNPC_DesactivarModoDialogo_mCAEEA580C7BBFD9DBEE10874B636AC7510B7B610(__this, NULL);
 	}
 
-IL_0071:
+IL_00b0:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:58>
-		bool L_16 = __this->___dialogoActivo;
-		if (!L_16)
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:65>
+		bool L_24 = __this->___dialogoActivo;
+		if (!L_24)
 		{
-			goto IL_00a9;
+			goto IL_00e8;
 		}
 	}
 	{
 		il2cpp_codegen_runtime_class_init_inline(EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
-		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_17;
-		L_17 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
-		NullCheck(L_17);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_18;
-		L_18 = EventSystem_get_currentSelectedGameObject_mD606FFACF3E72755298A523CBB709535CF08C98A_inline(L_17, NULL);
+		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_25;
+		L_25 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
+		NullCheck(L_25);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_26;
+		L_26 = EventSystem_get_currentSelectedGameObject_mD606FFACF3E72755298A523CBB709535CF08C98A_inline(L_25, NULL);
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_19;
-		L_19 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_18, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_19)
+		bool L_27;
+		L_27 = Object_op_Equality_mB6120F782D83091EF56A198FCEBCF066DB4A9605(L_26, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_27)
 		{
-			goto IL_00a9;
+			goto IL_00e8;
 		}
 	}
 	{
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_20 = __this->___botonOpcionCentro;
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_28 = __this->___botonOpcionCentro;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
-		bool L_21;
-		L_21 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_20, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
-		if (!L_21)
+		bool L_29;
+		L_29 = Object_op_Inequality_mD0BE578448EAA61948F25C32F8DD55AB1F778602(L_28, (Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C*)NULL, NULL);
+		if (!L_29)
 		{
-			goto IL_00a9;
+			goto IL_00e8;
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:60>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:67>
 		il2cpp_codegen_runtime_class_init_inline(EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
-		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_22;
-		L_22 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
-		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_23 = __this->___botonOpcionCentro;
-		NullCheck(L_22);
-		EventSystem_SetSelectedGameObject_m91382EAC4D552C672CC07BE7EB1481F156045280(L_22, L_23, NULL);
+		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_30;
+		L_30 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_31 = __this->___botonOpcionCentro;
+		NullCheck(L_30);
+		EventSystem_SetSelectedGameObject_m91382EAC4D552C672CC07BE7EB1481F156045280(L_30, L_31, NULL);
 	}
 
-IL_00a9:
+IL_00e8:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:62>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:69>
 		return;
 	}
 }
@@ -15608,9 +15654,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ActivarModoDialogo_
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:66>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:73>
 		__this->___dialogoActivo = (bool)1;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:67>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:74>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelDialogosUI;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15621,7 +15667,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ActivarModoDialogo_
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:67>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:74>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___panelDialogosUI;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)1, NULL);
@@ -15629,7 +15675,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ActivarModoDialogo_
 
 IL_0021:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:70>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:77>
 		ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* L_3 = __this->___scriptMovimiento;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -15640,7 +15686,7 @@ IL_0021:
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:70>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:77>
 		ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* L_5 = __this->___scriptMovimiento;
 		NullCheck(L_5);
 		L_5->___puedeCaminar = (bool)0;
@@ -15648,13 +15694,13 @@ IL_0021:
 
 IL_003b:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:72>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:79>
 		il2cpp_codegen_runtime_class_init_inline(EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
 		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_6;
 		L_6 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
 		NullCheck(L_6);
 		EventSystem_SetSelectedGameObject_m91382EAC4D552C672CC07BE7EB1481F156045280(L_6, (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*)NULL, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:73>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:80>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_7 = __this->___botonOpcionCentro;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_8;
@@ -15665,7 +15711,7 @@ IL_003b:
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:75>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:82>
 		il2cpp_codegen_runtime_class_init_inline(EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707_il2cpp_TypeInfo_var);
 		EventSystem_t61C51380B105BE9D2C39C4F15B7E655659957707* L_9;
 		L_9 = EventSystem_get_current_mC87C69FB418563DC2A571A10E2F9DB59A6785016(NULL);
@@ -15676,11 +15722,11 @@ IL_003b:
 
 IL_0064:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:78>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:85>
 		Cursor_set_lockState_mD81F6E5F3D86506FFB88567689A3A00A7AD242E9(0, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:79>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:86>
 		Cursor_set_visible_m612FCB2E86C15F91CE2E6148D1B556667954A2B7((bool)1, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:81>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:88>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_11 = __this->___scriptCamaraJugador;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_12;
@@ -15691,7 +15737,7 @@ IL_0064:
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:81>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:88>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_13 = __this->___scriptCamaraJugador;
 		NullCheck(L_13);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_13, (bool)0, NULL);
@@ -15699,7 +15745,7 @@ IL_0064:
 
 IL_008a:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:82>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:89>
 		return;
 	}
 }
@@ -15714,9 +15760,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_DesactivarModoDialo
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:86>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:93>
 		__this->___dialogoActivo = (bool)0;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:87>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:94>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_0 = __this->___panelDialogosUI;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15727,7 +15773,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_DesactivarModoDialo
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:87>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:94>
 		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2 = __this->___panelDialogosUI;
 		NullCheck(L_2);
 		GameObject_SetActive_m638E92E1E75E519E5B24CF150B08CA8E0CDFAB92(L_2, (bool)0, NULL);
@@ -15735,11 +15781,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_DesactivarModoDialo
 
 IL_0021:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:89>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:96>
 		Cursor_set_lockState_mD81F6E5F3D86506FFB88567689A3A00A7AD242E9(1, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:90>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:97>
 		Cursor_set_visible_m612FCB2E86C15F91CE2E6148D1B556667954A2B7((bool)0, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:92>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:99>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_3 = __this->___scriptCamaraJugador;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_4;
@@ -15750,7 +15796,7 @@ IL_0021:
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:92>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:99>
 		MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71* L_5 = __this->___scriptCamaraJugador;
 		NullCheck(L_5);
 		Behaviour_set_enabled_mF1DCFE60EB09E0529FE9476CA804A3AA2D72B16A(L_5, (bool)1, NULL);
@@ -15758,9 +15804,9 @@ IL_0021:
 
 IL_0047:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:95>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:102>
 		MonoBehaviour_Invoke_mF724350C59362B0F1BFE26383209A274A29A63FB(__this, _stringLiteralD98BA16FB33C33DDDE53F23810F7219CB52596B0, (0.100000001f), NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:96>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:103>
 		return;
 	}
 }
@@ -15774,7 +15820,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RestaurarMovimiento
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:101>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:108>
 		ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* L_0 = __this->___scriptMovimiento;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15785,7 +15831,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RestaurarMovimiento
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:101>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:108>
 		ControladorTerremoto_tDBB614BB43EBDC4B3BC52E19EC4FC618AC005A9B* L_2 = __this->___scriptMovimiento;
 		NullCheck(L_2);
 		L_2->___puedeCaminar = (bool)1;
@@ -15793,7 +15839,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RestaurarMovimiento
 
 IL_001a:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:102>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:109>
 		return;
 	}
 }
@@ -15807,12 +15853,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ElegirOpcionVentana
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:106>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:113>
 		SistemaAsistenciaNPC_RegistrarAccionEnTabla_m426238B1C5F4CB7757F8408AF654377ECD282001(__this, _stringLiteralA428223106A7D46E00AF9B7BFBB825090F4523A9, ((int32_t)-500), NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:107>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:114>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___puntoVentanal;
 		SistemaAsistenciaNPC_MoverNPC_mD43C553AA93020172DDD26C92C6643D25C2938A3(__this, L_0, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:108>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:115>
 		return;
 	}
 }
@@ -15826,12 +15872,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ElegirOpcionColumna
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:112>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:119>
 		SistemaAsistenciaNPC_RegistrarAccionEnTabla_m426238B1C5F4CB7757F8408AF654377ECD282001(__this, _stringLiteral5C7690812F9942DC97AAE7C548D259A23A0A8A7D, ((int32_t)1000), NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:113>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:120>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___puntoColumnaSegura;
 		SistemaAsistenciaNPC_MoverNPC_mD43C553AA93020172DDD26C92C6643D25C2938A3(__this, L_0, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:114>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:121>
 		return;
 	}
 }
@@ -15845,12 +15891,12 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_ElegirOpcionColumna
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:118>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:125>
 		SistemaAsistenciaNPC_RegistrarAccionEnTabla_m426238B1C5F4CB7757F8408AF654377ECD282001(__this, _stringLiteral29523CBB4CA432D164D9EC065B0CDF18C795B113, ((int32_t)-100), NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:119>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:126>
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_0 = __this->___puntoColumnaMala;
 		SistemaAsistenciaNPC_MoverNPC_mD43C553AA93020172DDD26C92C6643D25C2938A3(__this, L_0, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:120>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:127>
 		return;
 	}
 }
@@ -15867,7 +15913,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RegistrarAccionEnTa
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:124>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:131>
 		SistemaAgarre_tD03E23F37A121E3C92F787D349853BC10C420D87* L_0 = __this->___inventarioJugador;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15878,7 +15924,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RegistrarAccionEnTa
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:126>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:133>
 		SistemaAgarre_tD03E23F37A121E3C92F787D349853BC10C420D87* L_2 = __this->___inventarioJugador;
 		SistemaAgarre_tD03E23F37A121E3C92F787D349853BC10C420D87* L_3 = L_2;
 		NullCheck(L_3);
@@ -15886,7 +15932,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RegistrarAccionEnTa
 		int32_t L_5 = ___1_puntos;
 		NullCheck(L_3);
 		L_3->___puntuacionTotal = ((int32_t)il2cpp_codegen_add(L_4, L_5));
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:127>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:134>
 		SistemaAgarre_tD03E23F37A121E3C92F787D349853BC10C420D87* L_6 = __this->___inventarioJugador;
 		NullCheck(L_6);
 		List_1_tF470A3BE5C1B5B68E1325EF3F109D172E60BD7CD* L_7 = L_6->___desglosePuntuacion;
@@ -15901,7 +15947,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_RegistrarAccionEnTa
 
 IL_0048:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:129>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:136>
 		return;
 	}
 }
@@ -15915,11 +15961,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_MoverNPC_mD43C553AA
 		s_Il2CppMethodInitialized = true;
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:133>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:140>
 		__this->___yaRespondio = (bool)1;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:134>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:141>
 		SistemaAsistenciaNPC_DesactivarModoDialogo_mCAEEA580C7BBFD9DBEE10874B636AC7510B7B610(__this, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:136>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:143>
 		NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* L_0 = __this->___agenteNPC;
 		il2cpp_codegen_runtime_class_init_inline(Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_il2cpp_TypeInfo_var);
 		bool L_1;
@@ -15930,7 +15976,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_MoverNPC_mD43C553AA
 		}
 	}
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:136>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:143>
 		NavMeshAgent_t5D0CCC0B3B78242F286C9BD8EDD87C3CCBD0A66F* L_2 = __this->___agenteNPC;
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_3 = ___0_destino;
 		NullCheck(L_3);
@@ -15943,7 +15989,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC_MoverNPC_mD43C553AA
 
 IL_002d:
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:137>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:144>
 		return;
 	}
 }
@@ -15951,7 +15997,7 @@ IL_002d:
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SistemaAsistenciaNPC__ctor_mE635BBF5D3C68019B6CFDADC719151AD3FD06D37 (SistemaAsistenciaNPC_t3C776ABB58CBA95B9A0CAEDF8BFA26DE0EB196E5* __this, const RuntimeMethod* method) 
 {
 	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:13>
+		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/Scripts/SistemaAsistenciaNPC.cs:14>
 		__this->___distanciaInteraccion = (3.0f);
 		MonoBehaviour__ctor_m592DB0105CA0BC97AA1C5F4AD27B12D68A3B7C1E(__this, NULL);
 		return;
@@ -24356,370 +24402,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisplayTextMeshFloatingTextU3Ed__16_S
 }
 // Method Definition Index: 88027
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDisplayTextMeshFloatingTextU3Ed__16_System_Collections_IEnumerator_get_Current_m066140B8D4CD5DE3527A3A05183AE89B487B5D55 (U3CDisplayTextMeshFloatingTextU3Ed__16_t5CBD7868EB4D3D561D539B99B4541CC014DFF5F0* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current;
-		return L_0;
-	}
-}
-#ifdef __clang__
-#pragma clang diagnostic pop
-#endif
-#ifdef __clang__
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Winvalid-offsetof"
-#pragma clang diagnostic ignored "-Wunused-variable"
-#endif
-// Method Definition Index: 88028
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisplayTextMeshProFloatingTextU3Ed__15__ctor_mD3C24C6814482113FD231827E550FBBCC91424A0 (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, int32_t ___0_U3CU3E1__state, const RuntimeMethod* method) 
-{
-	{
-		Object__ctor_mE837C6B9FA8C6D5D109F4B2EC885D79919AC0EA2(__this, NULL);
-		int32_t L_0 = ___0_U3CU3E1__state;
-		__this->___U3CU3E1__state = L_0;
-		return;
-	}
-}
-// Method Definition Index: 88029
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_IDisposable_Dispose_m83285E807FA4462B99B68D1EB12B2360238C53EB (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, const RuntimeMethod* method) 
-{
-	{
-		return;
-	}
-}
-// Method Definition Index: 88030
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool U3CDisplayTextMeshProFloatingTextU3Ed__15_MoveNext_m588E025C05E03684A11ABC91B50734A349D28CC8 (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	int32_t V_0 = 0;
-	TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* V_1 = NULL;
-	int32_t V_2 = 0;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_3;
-	memset((&V_3), 0, sizeof(V_3));
-	{
-		int32_t L_0 = __this->___U3CU3E1__state;
-		V_0 = L_0;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_1 = __this->___U3CU3E4__this;
-		V_1 = L_1;
-		int32_t L_2 = V_0;
-		switch (L_2)
-		{
-			case 0:
-			{
-				goto IL_0022;
-			}
-			case 1:
-			{
-				goto IL_0243;
-			}
-			case 2:
-			{
-				goto IL_0277;
-			}
-		}
-	}
-	{
-		return (bool)0;
-	}
-
-IL_0022:
-	{
-		__this->___U3CU3E1__state = (-1);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:115>
-		__this->___U3CCountDurationU3E5__2 = (2.0f);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:116>
-		float L_3;
-		L_3 = Random_Range_m5236C99A7D8AE6AC9190592DC66016652A2D2494((5.0f), (20.0f), NULL);
-		__this->___U3Cstarting_CountU3E5__3 = L_3;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:117>
-		float L_4 = __this->___U3Cstarting_CountU3E5__3;
-		__this->___U3Ccurrent_CountU3E5__4 = L_4;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:119>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_5 = V_1;
-		NullCheck(L_5);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_6 = L_5->___m_floatingText_Transform;
-		NullCheck(L_6);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_7;
-		L_7 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_6, NULL);
-		__this->___U3Cstart_posU3E5__5 = L_7;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:120>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_8 = V_1;
-		NullCheck(L_8);
-		TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* L_9 = L_8->___m_textMeshPro;
-		NullCheck(L_9);
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_10;
-		L_10 = VirtualFuncInvoker0< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(22, L_9);
-		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B L_11;
-		L_11 = Color32_op_Implicit_m79AF5E0BDE9CE041CAC4D89CBFA66E71C6DD1B70_inline(L_10, NULL);
-		__this->___U3Cstart_colorU3E5__6 = L_11;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:121>
-		__this->___U3CalphaU3E5__7 = (255.0f);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:122>
-		V_2 = 0;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:125>
-		float L_12 = __this->___U3Cstarting_CountU3E5__3;
-		float L_13 = __this->___U3CCountDurationU3E5__2;
-		__this->___U3CfadeDurationU3E5__8 = ((float)il2cpp_codegen_multiply(((float)((3.0f)/L_12)), L_13));
-		goto IL_024a;
-	}
-
-IL_00a7:
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:129>
-		float L_14 = __this->___U3Ccurrent_CountU3E5__4;
-		float L_15;
-		L_15 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_16 = __this->___U3CCountDurationU3E5__2;
-		float L_17 = __this->___U3Cstarting_CountU3E5__3;
-		__this->___U3Ccurrent_CountU3E5__4 = ((float)il2cpp_codegen_subtract(L_14, ((float)il2cpp_codegen_multiply(((float)(L_15/L_16)), L_17))));
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:131>
-		float L_18 = __this->___U3Ccurrent_CountU3E5__4;
-		if ((!(((float)L_18) <= ((float)(3.0f)))))
-		{
-			goto IL_0102;
-		}
-	}
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:134>
-		float L_19 = __this->___U3CalphaU3E5__7;
-		float L_20;
-		L_20 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		float L_21 = __this->___U3CfadeDurationU3E5__8;
-		float L_22;
-		L_22 = Mathf_Clamp_mEB9AEA827D27D20FCC787F7375156AF46BB12BBF_inline(((float)il2cpp_codegen_subtract(L_19, ((float)il2cpp_codegen_multiply(((float)(L_20/L_21)), (255.0f))))), (0.0f), (255.0f), NULL);
-		__this->___U3CalphaU3E5__7 = L_22;
-	}
-
-IL_0102:
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:137>
-		float L_23 = __this->___U3Ccurrent_CountU3E5__4;
-		V_2 = il2cpp_codegen_cast_double_to_int<int32_t>(L_23);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:138>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_24 = V_1;
-		NullCheck(L_24);
-		TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* L_25 = L_24->___m_textMeshPro;
-		String_t* L_26;
-		L_26 = Int32_ToString_m030E01C24E294D6762FB0B6F37CB541581F55CA5((&V_2), NULL);
-		NullCheck(L_25);
-		VirtualActionInvoker1< String_t* >::Invoke(66, L_25, L_26);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:141>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_27 = V_1;
-		NullCheck(L_27);
-		TextMeshPro_t4560AB28A3EAF503895A781A9C625273D833270E* L_28 = L_27->___m_textMeshPro;
-		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B* L_29 = (Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B*)(&__this->___U3Cstart_colorU3E5__6);
-		uint8_t L_30 = L_29->___r;
-		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B* L_31 = (Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B*)(&__this->___U3Cstart_colorU3E5__6);
-		uint8_t L_32 = L_31->___g;
-		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B* L_33 = (Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B*)(&__this->___U3Cstart_colorU3E5__6);
-		uint8_t L_34 = L_33->___b;
-		float L_35 = __this->___U3CalphaU3E5__7;
-		Color32_t73C5004937BF5BB8AD55323D51AAA40A898EF48B L_36;
-		memset((&L_36), 0, sizeof(L_36));
-		Color32__ctor_mC9C6B443F0C7CA3F8B174158B2AF6F05E18EAC4E_inline((&L_36), L_30, L_32, L_34, (uint8_t)il2cpp_codegen_cast_floating_point<uint8_t, int32_t, float>(L_35), NULL);
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_37;
-		L_37 = Color32_op_Implicit_m47CBB138122B400E0B1F4BFD7C30A6C2C00FCA3E_inline(L_36, NULL);
-		NullCheck(L_28);
-		VirtualActionInvoker1< Color_tD001788D726C3A7F1379BEED0260B9591F440C1F >::Invoke(23, L_28, L_37);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:144>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_38 = V_1;
-		NullCheck(L_38);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_39 = L_38->___m_floatingText_Transform;
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_40 = L_39;
-		NullCheck(L_40);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_41;
-		L_41 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_40, NULL);
-		float L_42 = __this->___U3Cstarting_CountU3E5__3;
-		float L_43;
-		L_43 = Time_get_deltaTime_mC3195000401F0FD167DD2F948FD2BC58330D0865(NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_44;
-		memset((&L_44), 0, sizeof(L_44));
-		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_44), (0.0f), ((float)il2cpp_codegen_multiply(L_42, L_43)), (0.0f), NULL);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_45;
-		L_45 = Vector3_op_Addition_m78C0EC70CB66E8DCAC225743D82B268DAEE92067_inline(L_41, L_44, NULL);
-		NullCheck(L_40);
-		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_40, L_45, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:147>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_46 = V_1;
-		NullCheck(L_46);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_47 = L_46->___lastPOS;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_48 = V_1;
-		NullCheck(L_48);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_49 = L_48->___m_cameraTransform;
-		NullCheck(L_49);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_50;
-		L_50 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_49, NULL);
-		bool L_51;
-		L_51 = TMPro_ExtensionMethods_Compare_mC71D1D722A3BEB91D0F47B71514A634AF72D6880(L_47, L_50, ((int32_t)1000), NULL);
-		if (!L_51)
-		{
-			goto IL_01c4;
-		}
-	}
-	{
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_52 = V_1;
-		NullCheck(L_52);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_53 = L_52->___lastRotation;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_54 = V_1;
-		NullCheck(L_54);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_55 = L_54->___m_cameraTransform;
-		NullCheck(L_55);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_56;
-		L_56 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_55, NULL);
-		bool L_57;
-		L_57 = TMPro_ExtensionMethods_Compare_m1BA0218FAED74AC8BB89E9F58D6CFF5D4BE1FCB0(L_53, L_56, ((int32_t)1000), NULL);
-		if (L_57)
-		{
-			goto IL_022f;
-		}
-	}
-
-IL_01c4:
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:149>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_58 = V_1;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_59 = V_1;
-		NullCheck(L_59);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_60 = L_59->___m_cameraTransform;
-		NullCheck(L_60);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_61;
-		L_61 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_60, NULL);
-		NullCheck(L_58);
-		L_58->___lastPOS = L_61;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:150>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_62 = V_1;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_63 = V_1;
-		NullCheck(L_63);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_64 = L_63->___m_cameraTransform;
-		NullCheck(L_64);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_65;
-		L_65 = Transform_get_rotation_m32AF40CA0D50C797DA639A696F8EAEC7524C179C(L_64, NULL);
-		NullCheck(L_62);
-		L_62->___lastRotation = L_65;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:151>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_66 = V_1;
-		NullCheck(L_66);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_67 = L_66->___m_floatingText_Transform;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_68 = V_1;
-		NullCheck(L_68);
-		Quaternion_tDA59F214EF07D7700B26E40E562F267AF7306974 L_69 = L_68->___lastRotation;
-		NullCheck(L_67);
-		Transform_set_rotation_m61340DE74726CF0F9946743A727C4D444397331D(L_67, L_69, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:152>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_70 = V_1;
-		NullCheck(L_70);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_71 = L_70->___m_transform;
-		NullCheck(L_71);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_72;
-		L_72 = Transform_get_position_m69CD5FA214FDAE7BB701552943674846C220FDE1(L_71, NULL);
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_73 = V_1;
-		NullCheck(L_73);
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_74 = L_73->___lastPOS;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_75;
-		L_75 = Vector3_op_Subtraction_mE42023FF80067CB44A1D4A27EB7CF2B24CABB828_inline(L_72, L_74, NULL);
-		V_3 = L_75;
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:153>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_76 = V_1;
-		NullCheck(L_76);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_77 = L_76->___m_transform;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_78 = V_3;
-		float L_79 = L_78.___x;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_80 = V_3;
-		float L_81 = L_80.___z;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_82;
-		memset((&L_82), 0, sizeof(L_82));
-		Vector3__ctor_m376936E6B999EF1ECBE57D990A386303E2283DE0_inline((&L_82), L_79, (0.0f), L_81, NULL);
-		NullCheck(L_77);
-		Transform_set_forward_mA178B5CF4F0F6133F9AF8ED3A4ECD2C604C60C26(L_77, L_82, NULL);
-	}
-
-IL_022f:
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:156>
-		il2cpp_codegen_runtime_class_init_inline(TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_il2cpp_TypeInfo_var);
-		WaitForEndOfFrame_tE38D80923E3F8380069B423968C25ABE50A46663* L_83 = ((TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_StaticFields*)il2cpp_codegen_static_fields_for(TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_il2cpp_TypeInfo_var))->___k_WaitForEndOfFrame;
-		__this->___U3CU3E2__current = L_83;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_83);
-		__this->___U3CU3E1__state = 1;
-		return (bool)1;
-	}
-
-IL_0243:
-	{
-		__this->___U3CU3E1__state = (-1);
-	}
-
-IL_024a:
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:127>
-		float L_84 = __this->___U3Ccurrent_CountU3E5__4;
-		if ((((float)L_84) > ((float)(0.0f))))
-		{
-			goto IL_00a7;
-		}
-	}
-	{
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:161>
-		il2cpp_codegen_runtime_class_init_inline(TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_il2cpp_TypeInfo_var);
-		WaitForSecondsU5BU5D_t2A9038ECB6E643745AEF2AD9A4F7FFD3D272186E* L_85 = ((TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_StaticFields*)il2cpp_codegen_static_fields_for(TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31_il2cpp_TypeInfo_var))->___k_WaitForSecondsRandom;
-		int32_t L_86;
-		L_86 = Random_Range_m6763D9767F033357F88B6637F048F4ACA4123B68(0, ((int32_t)19), NULL);
-		NullCheck(L_85);
-		int32_t L_87 = L_86;
-		WaitForSeconds_tF179DF251655B8DF044952E70A60DF4B358A3DD3* L_88 = (L_85)->GetAt(static_cast<il2cpp_array_size_t>(L_87));
-		__this->___U3CU3E2__current = L_88;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___U3CU3E2__current), (void*)L_88);
-		__this->___U3CU3E1__state = 2;
-		return (bool)1;
-	}
-
-IL_0277:
-	{
-		__this->___U3CU3E1__state = (-1);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:163>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_89 = V_1;
-		NullCheck(L_89);
-		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_90 = L_89->___m_floatingText_Transform;
-		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_91 = __this->___U3Cstart_posU3E5__5;
-		NullCheck(L_90);
-		Transform_set_position_mA1A817124BB41B685043DED2A9BA48CDF37C4156(L_90, L_91, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:165>
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_92 = V_1;
-		TextMeshProFloatingText_t833773B79A4826E78EDF2799C157B0EC3ACACB31* L_93 = V_1;
-		NullCheck(L_93);
-		RuntimeObject* L_94;
-		L_94 = TextMeshProFloatingText_DisplayTextMeshProFloatingText_mA1E370089458CD380E9BA7740C2BC2032F084148(L_93, NULL);
-		NullCheck(L_92);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_95;
-		L_95 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(L_92, L_94, NULL);
-		//<source_info:D:/RV y RA/Pelon/Integradora Cardboard/Assets/TextMesh Pro/Examples & Extras/Scripts/TextMeshProFloatingText.cs:166>
-		return (bool)0;
-	}
-}
-// Method Definition Index: 88031
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m2412DC176F8CA3096658EB0E27AC28218DAEC03A (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, const RuntimeMethod* method) 
-{
-	{
-		RuntimeObject* L_0 = __this->___U3CU3E2__current;
-		return L_0;
-	}
-}
-// Method Definition Index: 88032
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_Reset_mCCE19093B7355F3E23834E27A8517661DF833797 (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, const RuntimeMethod* method) 
-{
-	{
-		NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A* L_0 = (NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A*)il2cpp_codegen_object_new(((RuntimeClass*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&NotSupportedException_t1429765983D409BD2986508963C98D214E4EBF4A_il2cpp_TypeInfo_var)));
-		NotSupportedException__ctor_m1398D0CDE19B36AA3DE9392879738C1EA2439CDF(L_0, NULL);
-		IL2CPP_RAISE_MANAGED_EXCEPTION(L_0, ((RuntimeMethod*)il2cpp_codegen_initialize_runtime_metadata_inline((uintptr_t*)&U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_Reset_mCCE19093B7355F3E23834E27A8517661DF833797_RuntimeMethod_var)));
-	}
-}
-// Method Definition Index: 88033
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RuntimeObject* U3CDisplayTextMeshProFloatingTextU3Ed__15_System_Collections_IEnumerator_get_Current_mE53E0B4DBE6AF5DAC110C3F626B34C5965845E54 (U3CDisplayTextMeshProFloatingTextU3Ed__15_tDFD30981C9C1189D2AC3AA6C07DA7EFE7E1694F3* __this, const RuntimeMethod* method) 
 {
 	{
 		RuntimeObject* L_0 = __this->___U3CU3E2__current;
