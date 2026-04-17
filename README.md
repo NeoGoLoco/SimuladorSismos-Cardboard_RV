@@ -1,7 +1,8 @@
 *REQUERIMIENTOS TÉCNICOS Y GUÍA DE INSTALACIÓN - SISMO VR*
 Proyecto: Simulador de Protección Civil en Realidad Virtual
-Desarrolladores: Adrián Vázquez, Brandon Denylson y Roberto Luna (TSU en TIID - 501)
-Fecha de última actualización: 15 de abril de 2026 (Ya para entregarlo a la Memoria).
+Materia: Proyecto Integrador II (TSU en TIID - 501)
+Fecha de última actualización: 15 de abril de 2026 (Ya para entregarlo a la Memoria)
+Por: Edgar Adrián Vázquez Peñaloza.
 -----------------------------------------------------------
 1. ESPECIFICACIONES DEL MOTOR Y PLATAFORMA
 ------------------------------------------
