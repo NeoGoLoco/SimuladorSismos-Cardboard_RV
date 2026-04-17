@@ -48,7 +48,7 @@ public class AudioReactiveUI : MonoBehaviour
         // Multiplica por la sensibilidad y limita entre min y max
         targetAlpha = Mathf.Clamp(currentBassLevel * sensitivity, minAlpha, maxAlpha);
 
-        // Suaviza la transición (LERP) para que se sienta orgánica
+        // Suaviza la transición para que se sienta orgánica
         float currentAlpha = shineImage.color.a;
         float nextAlpha = Mathf.Lerp(currentAlpha, targetAlpha, Time.deltaTime * lerpSpeed);
 

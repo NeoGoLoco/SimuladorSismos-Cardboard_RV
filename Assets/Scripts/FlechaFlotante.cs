@@ -1,10 +1,12 @@
 using UnityEngine;
 
+// Crea un efecto visual dinámico de rotación y flotación para indicadores o ítems de interés.
 public class FlechaControlTotal : MonoBehaviour
 {
-    [Header("Ajustes de Rotaci�n")]
+    [Header("Ajustes de Rotación")]
     public float velocidadRotacion = 100f;
     
+    // Define el eje sobre el que girará el objeto (ej. Y para un giro tipo moneda)
     public Vector3 ejeRotacion = new Vector3(1, 0, 0);
 
     [Header("Ajustes de Flote")]
@@ -16,20 +18,22 @@ public class FlechaControlTotal : MonoBehaviour
 
     void Start()
     {
+        // Guardamos el punto de origen para que el flote siempre sea relativo a la posición inicial
         posicionInicial = transform.position;
     }
 
     void Update()
     {
-        // ROTACI�N PERSONALIZADA
-        // Usamos ejeRotacion para que t� decidas si gira en X, Y, Z o combinado
+        // ROTACIÓN
+        // Usamos Space.Self para que el objeto gire sobre su propio eje, sin importar cómo esté orientado
         transform.Rotate(ejeRotacion * velocidadRotacion * Time.deltaTime, Space.Self);
 
-        // FLOTE EN DIRECCI�N PERSONALIZADA
-        // Multiplicamos el vector de direcci�n por el resultado del Seno y la amplitud
+        // Utilizamos una función Seno para generar un vaivén suave y repetitivo.
+        // Multiplicamos la dirección normalizada por el resultado del seno para definir el desplazamiento.
         float movimientoSeno = Mathf.Sin(Time.time * velocidadFlote) * amplitudFlote;
         Vector3 desfase = direccionFlote.normalized * movimientoSeno;
 
+        // Actualizamos la posición sumando el desfase calculado al punto de origen
         transform.position = posicionInicial + desfase;
     }
 }

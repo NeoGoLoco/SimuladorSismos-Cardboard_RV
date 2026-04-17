@@ -1,19 +1,19 @@
 using UnityEngine;
 
+// Simula el comportamiento err√°tico de objetos con Rigidbody mediante vibraciones y sacudidas laterales reactivas al sismo.
 [RequireComponent(typeof(Rigidbody))]
 public class ObjetoSismico : MonoBehaviour
 {
-    [Header("ConfiguraciÛn del Sismo")]
+    [Header("Configuraci√≥n del Sismo")]
     [Tooltip("Fuerza continua con la que el objeto vibra suavemente.")]
     public float fuerzaVibracion = 2f;
 
     [Tooltip("Fuerza de los jalones bruscos de izquierda a derecha (Oscilatorio).")]
     public float fuerzaImpulsoLateral = 3f;
 
-    [Tooltip("QuÈ tan seguido ocurre un jalÛn brusco (0.01 = raro, 0.1 = muy seguido).")]
+    [Tooltip("Qu√© tan seguido ocurre un jal√≥n brusco (0.01 = raro, 0.1 = muy seguido).")]
     public float probabilidadImpulsoLateral = 0.05f;
 
-    // Referencias internas
     private Rigidbody rb;
     private ControladorTerremoto controlador;
 
@@ -21,38 +21,40 @@ public class ObjetoSismico : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Busca autom·ticamente tu controlador principal en la escena
+        // Vinculamos el objeto al estado global del terremoto para saber cu√°ndo empezar a temblar
         controlador = Object.FindFirstObjectByType<ControladorTerremoto>();
     }
 
+    // Usamos FixedUpdate porque todas las interacciones aqu√≠ son f√≠sicas (fuerzas sobre Rigidbodies)
     void FixedUpdate()
     {
-        // Si el controlador existe y el terremoto est· encendido...
+        // El objeto solo reacciona si el sistema de terremoto est√° encendido en el controlador principal
         if (controlador != null && controlador.terremotoActivo)
         {
-            // 1. VibraciÛn general (Tiembla un poco en todas direcciones horizontales)
+            // 1. VIBRACI√ìN CONSTANTE (Ruido de fondo)
+            // Generamos una fuerza aleatoria horizontal para simular el "temblor" base del suelo
             Vector3 fuerzaAleatoria = new Vector3(
                 Random.Range(-1f, 1f),
-                0f, // Mantenemos el eje Y en 0 para evitar que brinque
+                0f, // Bloqueamos el eje Y para que los objetos no leviten de forma irreal
                 Random.Range(-1f, 1f)
             ) * fuerzaVibracion;
 
             rb.AddForce(fuerzaAleatoria, ForceMode.Force);
 
-            // 2. Movimiento fuerte de Izquierda a Derecha (Oscilatorio)
+            // 2. IMPULSOS LATERALES (Sacudidas bruscas)
+            // Simulamos ondas s√≠smicas m√°s fuertes que desplazan los objetos violentamente
             if (Random.value < probabilidadImpulsoLateral)
             {
-                // Decidimos aleatoriamente si el jalÛn es hacia la izquierda o hacia la derecha
+                // Decidimos el sentido del "latigazo" (Izquierda o Derecha)
                 float direccionX = (Random.value > 0.5f) ? 1f : -1f;
-
-                // Vector3.right es el eje X (izquierda/derecha). Lo multiplicamos por 1 o -1.
                 Vector3 empujeLateral = Vector3.right * direccionX;
 
-                // Aplicamos la fuerza como un impulso repentino
+                // Aplicamos un impulso instant√°neo para romper la inercia del objeto
                 rb.AddForce(empujeLateral * fuerzaImpulsoLateral, ForceMode.Impulse);
             }
 
-            // 3. RotaciÛn aleatoria para que los objetos resbalen y giren
+            // 3. TORQUE ALEATORIO (Efecto de resbal√≥n)
+            // A√±adimos una rotaci√≥n sutil para que los objetos se caigan o giren mientras se desplazan
             Vector3 torqueAleatorio = new Vector3(
                 Random.Range(-1f, 1f),
                 Random.Range(-1f, 1f),

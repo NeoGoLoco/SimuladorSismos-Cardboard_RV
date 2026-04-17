@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.InputSystem;
 
+// Este script gestiona el final de la experiencia: detecta la llegada a la zona segura,
+// evalúa el desempeño ético del usuario y presenta los resultados finales en VR.
 public class MetaNivel : MonoBehaviour
 {
     [Header("Interfaz de la Meta")]
@@ -14,19 +16,20 @@ public class MetaNivel : MonoBehaviour
     public GameObject contenedorBotones;
 
     [Header("El Cuarto Seguro (VR)")]
-    [Tooltip("Crea un GameObject vac�o lejos del mapa (ej. Y: -50) y arr�stralo aqu�")]
+    // Espacio reservado para teletransportar la cámara y mostrar la UI sin obstrucciones del mapa
+    [Tooltip("Crea un GameObject vacío lejos del mapa (ej. Y: -50) y arrástralo aquí")]
     public Transform puntoSeguroUI;
 
     [Header("Referencias del Jugador")]
     public MonoBehaviour scriptMovimiento;
     public SistemaAgarre scriptInventario;
 
-    [Header("Soluci�n Matem�tica")]
+    [Header("Solución Matemática")]
     public Transform jugadorTransform;
-    public Transform sillaTransform;
+    public Transform sillaTransform; // Representa al familiar o el objetivo a escoltar
     public float radioDeMeta = 3.0f;
 
-    [Header("L�gica de Empat�a / Puerta")]
+    [Header("Lógica de Empatía / Puerta")]
     public bool habloConFamiliar = false;
     public GameObject modeloPuertaCerrada;
     public GameObject modeloPuertaAbierta;
@@ -37,41 +40,44 @@ public class MetaNivel : MonoBehaviour
     public AudioClip sonidoAparicionTitulo;
     public AudioClip sonidoPuntuacionFinal;
 
-    // Variables de control
+    // Controladores de estado interno
     private bool sillaSalvada = false;
     private bool nivelTerminado = false;
     private bool esperandoRespuesta = false;
 
     void Start()
     {
+        // Nos aseguramos de que la tabla de resultados esté oculta al iniciar
         if (panelTablaPuntuacion != null)
         {
             panelTablaPuntuacion.SetActive(false);
         }
 
-        // Nos aseguramos de que el estado inicial de las puertas sea el correcto
+        // Estado inicial de la ruta de salida: debe empezar bloqueada
         if (modeloPuertaAbierta != null) modeloPuertaAbierta.SetActive(false);
         if (modeloPuertaCerrada != null) modeloPuertaCerrada.SetActive(true);
     }
 
     void Update()
     {
-        // 1. ESCUCHADOR DE BOTONES FINALES
+        // Si el nivel ya terminó, pasamos a escuchar la entrada para reiniciar o salir
         if (esperandoRespuesta)
         {
             bool presionoSi = false;
             bool presionoNo = false;
 
+            // Soporte para teclado (X para sí, O para no)
             if (Keyboard.current != null)
             {
                 if (Keyboard.current.xKey.wasPressedThisFrame) presionoSi = true;
                 if (Keyboard.current.oKey.wasPressedThisFrame) presionoNo = true;
             }
 
+            // Soporte para Gamepad (X/South para sí, Círculo/East para no)
             if (Gamepad.current != null)
             {
-                if (Gamepad.current.buttonSouth.wasPressedThisFrame) presionoSi = true; // X
-                if (Gamepad.current.buttonEast.wasPressedThisFrame) presionoNo = true;  // C�rculo
+                if (Gamepad.current.buttonSouth.wasPressedThisFrame) presionoSi = true; 
+                if (Gamepad.current.buttonEast.wasPressedThisFrame) presionoNo = true;  
             }
 
             if (presionoSi)
@@ -88,20 +94,23 @@ public class MetaNivel : MonoBehaviour
             return;
         }
 
-        // 2. L�GICA DE DETECCI�N DE META
+        // Monitoreo constante de la zona de meta
         if (nivelTerminado == true || jugadorTransform == null || sillaTransform == null)
         {
             return;
         }
 
+        // Calculamos si el familiar logró entrar en el radio de seguridad
         float distanciaSilla = Vector3.Distance(transform.position, sillaTransform.position);
         sillaSalvada = (distanciaSilla <= radioDeMeta);
 
+        // Verificamos si el jugador mismo alcanzó el objetivo
         float distanciaJugador = Vector3.Distance(transform.position, jugadorTransform.position);
         if (distanciaJugador <= radioDeMeta)
         {
             nivelTerminado = true;
 
+            // Frenamos el cronómetro global antes de pasar a la pantalla final
             if (GetComponent<GestorSimulacion>() != null)
             {
                 GetComponent<GestorSimulacion>().DetenerReloj();
@@ -111,21 +120,21 @@ public class MetaNivel : MonoBehaviour
         }
     }
 
+    // Se dispara cuando el jugador completa la interacción de diálogo con el NPC
     public void RegistrarInteraccionNPC()
     {
-        // Solo ejecutamos el cambio si no hab�amos hablado con �l antes
         if (!habloConFamiliar)
         {
             habloConFamiliar = true;
 
-            // Intercambio de modelos de puerta
+            // Feedback visual: abrimos la puerta para permitir la evacuación
             if (modeloPuertaCerrada != null) modeloPuertaCerrada.SetActive(false);
 
             if (modeloPuertaAbierta != null)
             {
                 modeloPuertaAbierta.SetActive(true);
 
-                // Sonido espacial "fantasma" en la posici�n de la puerta
+                // Disparamos un sonido espacial en la ubicación física de la puerta
                 if (sonidoAbrirPuerta != null)
                 {
                     AudioSource.PlayClipAtPoint(sonidoAbrirPuerta, modeloPuertaAbierta.transform.position, 1f);
@@ -134,10 +143,13 @@ public class MetaNivel : MonoBehaviour
         }
     }
 
+    // Prepara el entorno para mostrar los resultados sin distracciones
     void TerminarNivel()
     {
+        // Inmovilizamos al jugador
         if (scriptMovimiento != null) scriptMovimiento.enabled = false;
 
+        // Movemos la cámara al cuarto seguro para una lectura de UI más cómoda
         if (puntoSeguroUI != null)
         {
             jugadorTransform.position = puntoSeguroUI.position;
@@ -147,17 +159,21 @@ public class MetaNivel : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        // Recopilamos los datos del inventario y los bonos éticos
         string textoRecibo = CalcularTextoFinal();
         int puntosExtra = CalcularPuntosExtra();
         int total = scriptInventario.puntuacionTotal + puntosExtra;
 
+        // Iniciamos la presentación secuencial de la puntuación
         StartCoroutine(AnimacionFinalJuicy(textoRecibo, total));
     }
 
+    // Construye la cadena de texto con el desglose de acciones y puntos
     string CalcularTextoFinal()
     {
         string texto = "";
 
+        // Listamos los suministros rescatados del inventario
         if (scriptInventario != null && scriptInventario.desglosePuntuacion.Count > 0)
         {
             foreach (string renglon in scriptInventario.desglosePuntuacion)
@@ -167,10 +183,11 @@ public class MetaNivel : MonoBehaviour
         }
         else
         {
-            texto = "No recogiste ning�n objeto de valor.\n";
+            texto = "No recogiste ningún objeto de valor.\n";
         }
 
-        texto += "\n--- EVALUACI�N DE PROTOCOLO ---\n";
+        // Evaluación de conducta social y protocolos de seguridad
+        texto += "\n--- EVALUACIÓN DE PROTOCOLO ---\n";
 
         if (habloConFamiliar == true)
         {
@@ -178,23 +195,24 @@ public class MetaNivel : MonoBehaviour
         }
         else
         {
-            texto += "ALERTA: Abandono de civil. PENALIZACI�N (-2000 pts)\n";
+            texto += "ALERTA: Abandono de civil. PENALIZACIÓN (-2000 pts)\n";
         }
 
         texto += "\n--- REPORTE DE RESCATE ---\n";
 
         if (sillaSalvada == true)
         {
-            texto += "Evacuaci�n de familiar: �XITO (+1000 pts)";
+            texto += "Evacuación de familiar: ÉXITO (+1000 pts)";
         }
         else
         {
-            texto += "Evacuaci�n de familiar: FALLIDA (-1000 pts)";
+            texto += "Evacuación de familiar: FALLIDA (-1000 pts)";
         }
 
         return texto;
     }
 
+    // Lógica matemática pura para los bonos de la meta
     int CalcularPuntosExtra()
     {
         int extra = 0;
@@ -203,6 +221,7 @@ public class MetaNivel : MonoBehaviour
         return extra;
     }
 
+    // Controla la coreografía visual de la tabla de puntuación (ignora la pausa del juego)
     IEnumerator AnimacionFinalJuicy(string textoRecibo, int puntajeTotal)
     {
         panelTablaPuntuacion.SetActive(true);
@@ -216,6 +235,7 @@ public class MetaNivel : MonoBehaviour
         textoPuntajeTotal.text = "";
         tituloPanel.localScale = Vector3.zero;
 
+        // Iniciamos la ambientación sonora de la meta
         if (reproductorAudioMeta != null && reproductorAudioMeta.clip != null)
         {
             reproductorAudioMeta.Play();
@@ -226,6 +246,7 @@ public class MetaNivel : MonoBehaviour
             reproductorAudioMeta.PlayOneShot(sonidoAparicionTitulo);
         }
 
+        // Efecto visual de entrada para el título (Pop-up)
         float tiempo = 0;
         float duracionPop = 0.5f;
 
@@ -238,6 +259,7 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
+        // Imprimimos el desglose letra por letra para un efecto de reporte en tiempo real
         foreach (char letra in textoRecibo)
         {
             textoListaObjetos.text += letra;
@@ -246,12 +268,13 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
+        // Revelación del puntaje final con sonido de impacto
         if (reproductorAudioMeta != null && sonidoPuntuacionFinal != null)
         {
             reproductorAudioMeta.PlayOneShot(sonidoPuntuacionFinal);
         }
 
-        string textoFinal = "PUNTUACI�N TOTAL: " + puntajeTotal + " PTS";
+        string textoFinal = "PUNTUACIÓN TOTAL: " + puntajeTotal + " PTS";
 
         foreach (char letra in textoFinal)
         {
@@ -261,6 +284,7 @@ public class MetaNivel : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(0.5f);
 
+        // Habilitamos los botones una vez terminada la animación
         if (contenedorBotones != null)
         {
             contenedorBotones.SetActive(true);

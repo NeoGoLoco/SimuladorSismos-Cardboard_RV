@@ -1,18 +1,19 @@
 using UnityEngine;
 
+// Dirige la mirada de un hueso espec√≠fico hacia el jugador, corrigiendo la orientaci√≥n del rig y limitando el rango de visi√≥n.
 public class MiradaSinAnimacion : MonoBehaviour
 {
     public Transform jugador;
 
-    [Header("1. CorrecciÛn Visual (Hueso roto)")]
+    [Header("1. Correcci√≥n Visual (Hueso roto)")]
     [Tooltip("Arregla que te mire con la oreja")]
     public Vector3 compensacionEjes = new Vector3(0, 0, 0);
 
-    [Header("2. CorrecciÛn del Cono de DetecciÛn")]
-    [Tooltip("Mueve este valor en positivo o negativo para centrar el ·rea de detecciÛn")]
+    [Header("2. Correcci√≥n del Cono de Detecci√≥n")]
+    [Tooltip("Mueve este valor en positivo o negativo para centrar el √°rea de detecci√≥n")]
     public float rotacionConoY = 0f;
 
-    [Header("3. LÌmites (Anti-Exorcista)")]
+    [Header("3. L√≠mites (Anti-Exorcista)")]
     public float limiteAngulo = 70f;
     public float velocidadGiro = 3f;
 
@@ -21,36 +22,43 @@ public class MiradaSinAnimacion : MonoBehaviour
 
     void Start()
     {
+        // Si no asignamos al jugador, lo buscamos autom√°ticamente por su Tag
         if (jugador == null)
             jugador = GameObject.FindGameObjectWithTag("Player").transform;
 
+        // Guardamos la postura original para que la cabeza regrese a su sitio cuando el jugador se aleja
         rotacionInicialLocal = transform.localRotation;
         raizNPC = transform.root;
     }
 
+    // Usamos LateUpdate para que la rotaci√≥n manual ocurra DESPU√âS de las animaciones del Animator
     void LateUpdate()
     {
         if (jugador == null) return;
 
         Vector3 direccionAlJugador = jugador.position - transform.position;
 
-        // --- LA MAGIA NUEVA AQUÕ ---
-        // Rotamos el vector "adelante" de la raÌz para alinear el radar con el modelo 3D
+        // AJUSTE DEL RADAR
+        // Corregimos el vector "frente" del NPC para que el cono de visi√≥n coincida con la cara del modelo
         Vector3 frenteCorregido = Quaternion.Euler(0, rotacionConoY, 0) * raizNPC.forward;
 
-        // Calculamos el ·ngulo usando nuestro nuevo frente corregido
+        // Calculamos la diferencia angular entre el frente del NPC y la posici√≥n del jugador
         float angulo = Vector3.Angle(frenteCorregido, direccionAlJugador);
 
         if (angulo < limiteAngulo)
         {
-            // --- EST¡S EN SU RANGO DE VISI”N ---
+            // ESTADO: SIGUIENDO CON LA MIRADA
+            // Calculamos la rotaci√≥n hacia el jugador y aplicamos la compensaci√≥n para corregir ejes mal orientados
             Quaternion rotacionMirar = Quaternion.LookRotation(direccionAlJugador);
             Quaternion rotacionCorregida = rotacionMirar * Quaternion.Euler(compensacionEjes);
+            
+            // Suavizamos el movimiento para que la cabeza no gire instant√°neamente
             transform.rotation = Quaternion.Slerp(transform.rotation, rotacionCorregida, Time.deltaTime * velocidadGiro);
         }
         else
         {
-            // --- TE FUISTE POR DETR¡S ---
+            // ESTADO: REGRESO A POSICI√ìN NATURAL
+            // Si el jugador sale del cono de visi√≥n, la cabeza vuelve a su rotaci√≥n de Idle
             transform.localRotation = Quaternion.Slerp(transform.localRotation, rotacionInicialLocal, Time.deltaTime * velocidadGiro);
         }
     }

@@ -1,34 +1,38 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+// Distribuye objetos clave en posiciones aleatorias para variar la experiencia de búsqueda en cada partida.
 public class AleatorizadorObjetos : MonoBehaviour
 {
     [Header("Objetos a Esconder")]
-    [Tooltip("Arrastra aqu� tu mochila, documentos, llaves, etc.")]
+    [Tooltip("Arrastra aquí tu mochila, documentos, llaves, etc.")]
     public List<GameObject> objetosAleatorios;
 
-    [Header("Puntos de Aparici�n (L�gicos)")]
-    [Tooltip("Arrastra aqu� los GameObjects vac�os que sirven como posiciones")]
+    [Header("Puntos de Aparición (Lógicos)")]
+    [Tooltip("Arrastra aquí los GameObjects vacíos que sirven como posiciones")]
     public List<Transform> puntosDeControl;
 
     void Start()
     {
+        // Iniciamos la distribución en cuanto el nivel carga
         RepartirObjetos();
     }
 
     public void RepartirObjetos()
     {
-        // Seguridad: Asegurarnos de que hay suficientes puntos para los objetos:>
+        // Validación de seguridad: evitamos errores si faltan puntos de aparición para la cantidad de objetos
         if (puntosDeControl.Count < objetosAleatorios.Count)
         {
-            Debug.LogWarning("Seguridad: Tenemos m�s objetos que lugares para esconderlos.");
+            Debug.LogWarning("Configuración insuficiente: Hay más objetos que puntos de control disponibles.");
             return;
         }
 
-        // Crear una copia temporal de los puntos para "barajarlos" como cartas
+        // Generamos una copia de trabajo de las posiciones para poder mezclarlas sin alterar las originales
         List<Transform> puntosDisponibles = new List<Transform>(puntosDeControl);
 
-        // Se mezclan los puntos de "control" (Algoritmo Fisher-Yates)
+        // --- BARAJADO Lógico
+        // Implementación del Algoritmo Fisher-Yates. Mezclamos los puntos como un mazo de cartas
+        // para garantizar que la distribución sea verdaderamente aleatoria y no se repitan lugares.
         for (int i = 0; i < puntosDisponibles.Count; i++)
         {
             Transform temp = puntosDisponibles[i];
@@ -37,15 +41,16 @@ public class AleatorizadorObjetos : MonoBehaviour
             puntosDisponibles[indiceAleatorio] = temp;
         }
 
-        // Se le asigna a cada objeto uno de los puntos ya mezclados
+        // La Asignación Física (Barajeo)
+        // Una vez mezclados los puntos, asignamos cada objeto de la lista a una posición única
         for (int i = 0; i < objetosAleatorios.Count; i++)
         {
             if (objetosAleatorios[i] != null)
             {
-                // Teletransportamos el objeto a la nueva posici�n
+                // Teletransportamos el objeto a las coordenadas del punto de control seleccionado
                 objetosAleatorios[i].transform.position = puntosDisponibles[i].position;
 
-                // Tambi�n copiamos la rotaci�n por si el punto est� inclinado... Esto es opcional
+                // Sincronizamos también la rotación por si el punto está diseñado para una superficie específica
                 objetosAleatorios[i].transform.rotation = puntosDisponibles[i].rotation;
             }
         }

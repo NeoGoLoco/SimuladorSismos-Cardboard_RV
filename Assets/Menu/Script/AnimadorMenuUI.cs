@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+// Crea dinamismo en la interfaz mediante efectos de oscilación y pulso que funcionan de forma independiente al tiempo del juego.
 public class AnimadorMenuUI : MonoBehaviour
 {
     [Header("Efecto de Flote (Botones, Textos, Imágenes)")]
@@ -17,6 +18,7 @@ public class AnimadorMenuUI : MonoBehaviour
 
     void Start()
     {
+        // Guardamos las coordenadas locales originales para que el flote sea relativo a su posición en el Canvas
         posicionesIniciales = new Vector3[elementosFlotantes.Length];
         for (int i = 0; i < elementosFlotantes.Length; i++)
         {
@@ -30,10 +32,12 @@ public class AnimadorMenuUI : MonoBehaviour
 
     void Update()
     {
-        // Usamos unscaledTime para ignorar la pausa del juego y puedan flotar los elementos
+        // UNSCALED TIME -> Esto es vital para que las animaciones sigan funcionando 
+        // aunque el juego esté en pausa (Time.timeScale = 0).
         float ondaTiempo = Time.unscaledTime;
 
-        // Flote de elementos
+        // ANIMACIÓN DE FLOTE
+        // Aplicamos un movimiento sinusoidal a la posición vertical (Y) de cada elemento de la lista
         for (int i = 0; i < elementosFlotantes.Length; i++)
         {
             if (elementosFlotantes[i] != null)
@@ -43,7 +47,8 @@ public class AnimadorMenuUI : MonoBehaviour
             }
         }
 
-        // Latido del Titulo
+        // ANIMACIÓN DE LATIDO
+        // Modificamos la escala del título para crear un efecto de "respiración" o pulsación constante
         if (titulo != null)
         {
             float multiplicadorEscala = 1f + (Mathf.Sin(ondaTiempo * velocidadLatido) * variacionEscala);

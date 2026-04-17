@@ -1,17 +1,18 @@
 using UnityEngine;
-//El Valor del objeto est· oculto y desde el Inspector se puede agregar alg˙n valor o descripciÛn... Desde ahÌxd
-//Y gracias a las funciones en el SistemaAgarre, se te acumulan los puntos
+
+// Define la identidad, valor educativo y ajustes de agarre espec√≠ficos para cada objeto interactuable.
 public class ValorObjeto : MonoBehaviour
 {
-    [Header("Datos para el Inventario")]
+    [Header("Atributos del Objeto")]
     public string nombreMostrado = "Objeto Desconocido";
     public int puntosQueOtorga = 10;
 
-    [TextArea(2, 5)] // Hace que el cuadro de texto en Unity sea m·s grande
+    // Este campo de texto expandido en el Inspector permite redactar el mensaje de conciencia que la IA mostrar√° al jugador.
+    [TextArea(2, 5)] 
     public string datoCuriosoIA = "Dato interesante sobre este objeto.";
 
-    // Hace que se pueda modificar su posicionamiento
-    [Header("Ajustes en la Mano")]
+    [Header("Ajustes de Empu√±adura")]
+    // Permiten corregir manualmente el desfase de posici√≥n y rotaci√≥n para que el objeto encaje perfectamente en la mano del jugador.
     public Vector3 posicionEnMano;
     public Vector3 rotacionEnMano;
 }
